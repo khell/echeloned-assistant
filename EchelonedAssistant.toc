@@ -1,0 +1,43 @@
+## Interface: 30300
+## Title: Echeloned Assistant
+## Author: Sidriel
+## Version: 1.1.1
+## Notes: An addon to manage GM commands in EchelonedWoW. Based off GMH by Maven.
+## X-Revision: 280
+## DefaultState: Enabled
+## LoadOnDemand: 0
+## SavedVariables: gmhview,TicketChannel,TicketPassword,savedannmsg,savedannflag,GMH_ShowOnLoad
+EchelonedAssistant.lua
+FullForm.xml
+MiniForm.xml
+MinipForm.xml
+bindings.xml
+MinimapButton.xml
+AnnounceForm.xml
+BanForm.xml
+CommForm.xml
+IPBanForm.xml
+ItemForm.xml
+ItemFormSearch.xml
+MiscForm.xml
+ModifyForm.xml
+NPCForm.xml
+ObjectForm.xml
+Options.xml
+OverridesForm.xml
+PlayerForm.xml
+ProfessionsForm2.xml
+QuestForm.xml
+QuickItemForm.xml
+QuickPortalForm.xml
+SkillForm.xml
+SpellForm.xml
+TeleForm.xml
+WepskForm.xml
+TicketView.xml
+TicketTracker.xml
+TicketTracker.lua
+TitleForm.xml
+ProfessionsForm.xml
+PhaseForm.xml
+QuickItemForm2.xml
