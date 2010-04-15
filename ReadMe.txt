@@ -1,1 +1,1 @@
-Welcome to the EchelonedWoW Addon. when you start up hit /ewa show or hit the minimap
+Welcome to the EchelonedWoW Addon. when you start up hit /ewa show or hit the minimap. Test it out!
