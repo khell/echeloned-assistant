@@ -23,6 +23,7 @@ function ToggleAddon()
         PhaseForm:Hide();
 		ItemForm:Hide();
 		MiscForm:Hide();
+        RoleplayForm:Hide();
 		ObjectForm:Hide();
 		TitleForm:Hide();
 		TicketTracker:Hide();
@@ -128,6 +129,49 @@ end
 function BGLeave()
 	outSAY("t");
 end
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- RoleplayScript
+
+function RoleplayAdd()
+    outSAY("roleplay addselftolist "..RoleplayType:GetText());
+end
+
+function RoleplayRemove()
+    outSAY("roleplay remove");
+end
+
+function RoleplayListPlayer()
+    outSAY("roleplay listplayers");
+end
+
+function RoleplayListRo()
+    outSAY("roleplay listro");
+end
+
+function CreateRoleplay()
+    outSAY("roleplay createroleplay "..RoleplayCreatebox:GetText());
+end
+
+function RoleplayDelete()
+    outSAY("roleplay delete");
+end
+
+function RoleplayGo()
+    outSAY("roleplay go "..RoleplayIDbox:GetText());
+end
+
+function RoAnn()
+    outSAY("roleplay ann "..RoleplayAnnChat:GetText());
+end
+
+function RoleplayMute()
+    outSAY("roleplay mute "..RoleplayMutebox:GetText());
+end
+
+function RoleplayUnmute()
+    outSAY("roleplay unmute "..RoleplayMutebox:GetText());
+end
+    
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- CommScript
 function AnnounceChecked()

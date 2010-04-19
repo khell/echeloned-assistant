@@ -6,7 +6,7 @@
       <AbsDimension x="387" y="442" />
     </Size>
     <Anchors>
-      <Anchor point="CENTER" relativeTo="UIParent">
+      <Anchor point="RIGHT" relativeTo="UIParent">
         <Offset>
           <AbsDimension x="0" y="0" />
         </Offset>
@@ -76,7 +76,8 @@
           </Anchor>
         </Anchors>
         <Scripts>
-          <OnClick>PhaseToggleSanc()</OnClick>
+          <OnClick>PhaseToggleSanc()
+</OnClick>
         </Scripts>
         <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />

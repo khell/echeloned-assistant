@@ -30,6 +30,7 @@ ProfessionsForm2.xml
 QuestForm.xml
 QuickItemForm.xml
 QuickPortalForm.xml
+RoleplayForm.xml
 SkillForm.xml
 SpellForm.xml
 TeleForm.xml
