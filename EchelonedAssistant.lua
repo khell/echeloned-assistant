@@ -1136,6 +1136,10 @@ function DelPort()
 	outSAY("recall del "..ZoneName:GetText());
 end
 
+function GPSBuild()
+    outSAY("gps "..XCord:GetText().." "..YCord:GetText().." "..ZCord:GetText().." "..OrientationBox:GetText());
+end
+
 function PortPlayer()
 	outSAY("recall portplayer "..ToPlayerName:GetText().." "..ZoneName:GetText());
 end
