@@ -13,13 +13,9 @@ MiniForm.xml
 MinipForm.xml
 bindings.xml
 MinimapButton.xml
-AnnounceForm.xml
 BanForm.xml
-CommForm.xml
 IPBanForm.xml
 ItemForm.xml
-ItemFormSearch.xml
-MiscForm.xml
 ModifyForm.xml
 NPCForm.xml
 ObjectForm.xml
@@ -42,3 +38,4 @@ TitleForm.xml
 ProfessionsForm.xml
 PhaseForm.xml
 QuickItemForm2.xml
+ChatForm.xml

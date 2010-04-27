@@ -3,10 +3,10 @@
   <Frame name="RoleplayForm" hidden="true" parent="UIParent" movable="true" resizable="true" enableKeyboard="true" clampedToScreen="true">
     <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508883-59c2-4f83-ae10-27aaad48391b" />-->
     <Size>
-      <AbsDimension x="337" y="479" />
+      <AbsDimension x="611" y="211" />
     </Size>
     <Anchors>
-      <Anchor point="RIGHT" relativeTo="UIParent">
+      <Anchor point="TOP" relativeTo="UIParent">
         <Offset>
           <AbsDimension x="0" y="0" />
         </Offset>
@@ -71,7 +71,7 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="160" y="-23" />
+              <AbsDimension x="436" y="-23" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -104,7 +104,7 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="160" y="-47" />
+              <AbsDimension x="436" y="-47" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -140,6 +140,10 @@
             </Texture>
           </Layer>
         </Layers>
+        <Scripts>
+          <OnLoad>self:SetAutoFocus(false);</OnLoad>
+          <OnEscapePressed>self:ClearFocus(self);</OnEscapePressed>
+        </Scripts>
         <FontString font="Fonts\ARIALN.TTF">
           <FontHeight>
             <AbsValue val="14" />
@@ -161,12 +165,13 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="160" y="-104" />
+              <AbsDimension x="436" y="-104" />
             </Offset>
           </Anchor>
         </Anchors>
         <Scripts>
-          <OnClick>RoleplayUnmute()</OnClick>
+          <OnClick>RoleplayUnmute()
+</OnClick>
         </Scripts>
         <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
@@ -197,12 +202,13 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="160" y="-75" />
+              <AbsDimension x="436" y="-75" />
             </Offset>
           </Anchor>
         </Anchors>
         <Scripts>
-          <OnClick>RoleplayMute()</OnClick>
+          <OnClick>RoleplayMute()
+</OnClick>
         </Scripts>
         <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
@@ -233,7 +239,7 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="262" y="-434" />
+              <AbsDimension x="538" y="-169" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -270,7 +276,7 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="22" y="-378" />
+              <AbsDimension x="160" y="-75" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -340,7 +346,7 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="22" y="-326" />
+              <AbsDimension x="160" y="-23" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -373,7 +379,7 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="22" y="-350" />
+              <AbsDimension x="160" y="-47" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -436,7 +442,7 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="22" y="-298" />
+              <AbsDimension x="298" y="-116" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -473,7 +479,7 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="22" y="-257" />
+              <AbsDimension x="298" y="-75" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -510,7 +516,7 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="22" y="-205" />
+              <AbsDimension x="298" y="-23" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -543,7 +549,7 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="22" y="-229" />
+              <AbsDimension x="298" y="-47" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -606,7 +612,7 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="22" y="-177" />
+              <AbsDimension x="22" y="-172" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -643,7 +649,7 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="22" y="-149" />
+              <AbsDimension x="22" y="-144" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -680,7 +686,7 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="22" y="-121" />
+              <AbsDimension x="22" y="-116" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -777,7 +783,7 @@
       <Button name="$parentButton1" text="Join Roleplay list &lt;type&gt;">
         <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508884-59c2-4f83-ae10-27aaad48391b" />-->
         <Size>
-          <AbsDimension x="132" y="40" />
+          <AbsDimension x="132" y="35" />
         </Size>
         <Anchors>
           <Anchor point="TOPLEFT">

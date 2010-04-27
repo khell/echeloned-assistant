@@ -1,5 +1,8 @@
-<Bindings>
+﻿<Bindings>
   <Binding name="ToggleAddon" description="Hide/Show GM Helper" header="GMHelper">
     ToggleAddon();
+  </Binding>
+   <Binding name="ToggleChatbox" description="toggles Chatbox" header="Chatbox">
+    ToggleChatbox();
   </Binding>
 </Bindings>

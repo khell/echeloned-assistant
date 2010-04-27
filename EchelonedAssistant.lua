@@ -13,16 +13,23 @@ function OpenMain()
 	end
 end
 
+function ToggleChatbox()
+    if (ChatForm == hidden) then 
+        ChatForm:Show();
+    elseif (ChatForm == shown) then
+        ChatForm:Hide();
+    end
+end
+    
+
 function ToggleAddon()
 	if addonopen then
-		ItemFormSearch:Hide();
 		FullForm:Hide();
 		MinipForm:Hide();
 		MiniForm:Hide();
-		CommForm:Hide();
         PhaseForm:Hide();
+        ChatForm:Hide();
 		ItemForm:Hide();
-		MiscForm:Hide();
         RoleplayForm:Hide();
 		ObjectForm:Hide();
 		TitleForm:Hide();
@@ -35,7 +42,6 @@ function ToggleAddon()
 		BanForm:Hide();
 		IPBanForm:Hide();
 		NPCForm:Hide();
-		AnnounceForm:Hide();
 		PhaseForm:Hide();
 		PlayerForm:Hide();
 		WepskForm:Hide();
@@ -76,8 +82,10 @@ function GMH_EmptyField()
 end
 
 -- Binding Variables
-BINDING_HEADER_GMHelper = "GM Helper";
-BINDING_NAME_ToggleAddon = "Toggles GM Helper";
+BINDING_HEADER_GMHelper = "Echeloned Assistant";
+BINDING_NAME_ToggleAddon = "Toggles Echeloned Assistant";
+BINDING_HEADER_Chatbox = "Chatbox";
+BINDING_NAME_ToggleChatbox = "toggle Chatbox";
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Ban Script
 function BanAccount()
@@ -174,23 +182,6 @@ end
     
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- CommScript
-function AnnounceChecked()
-	if AnnounceCheck:GetChecked() or ScreenCheck:GetChecked() or GMAnnounceCheck:GetChecked() then
-		Announce();
-	else
-		ShowMessage("Please choose where to Announce!");
-	end
-end
-
-function Announce()
-	local ArrCheck = { AnnounceCheck:GetChecked(), ScreenCheck:GetChecked(), GMAnnounceCheck:GetChecked() };
-	local ArrChan = { "announce ", "wannounce ", "gmannounce " };
-	for a = 1, 3 do
-		if(ArrCheck[a]) then
-			outSAY(ArrChan[a]..AnnounceText:GetText());
-		end
-	end
-end
 
 function WhisperOn()
 	outSAY("gm allowwhispers "..PlayerName2:GetText());
@@ -200,63 +191,12 @@ function WhisperOff()
 	outSAY("gm blockwhispers "..PlayerName2:GetText());
 end
 
-function SaveAnnSend(a)
-	local b = savedannflag[a];
-	if savedannmsg[a] then
-		if(b >= 4) then outSAY("gmannounce "..savedannmsg[a]); b = b - 4; end
-		if(b >= 2) then outSAY("wannounce "..savedannmsg[a]); b = b - 2; end
-		if(b >= 1) then outSAY("announce "..savedannmsg[a]); b = b - 1; end
-	else
-		ShowMessage("Announcement not set! Please set it in the AnnounceForm.");
-	end
-end
-
-function ShowSavedAnn(a)
-	if savedannmsg[a] then
-		ShowMessage("Saved Announcement #"..a..": "..savedannmsg[a], "FFFFFF");
-	else
-		ShowMessage("Announcement not set! Please set it in the AnnounceForm.");
-	end
-end
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 -- AnnounceScript
-function SetAnnouncementChecked()
-	if AnnounceCheck:GetChecked() or ScreenCheck:GetChecked() or GMAnnounceCheck:GetChecked() then
-		Announce();
-	else
-		ShowMessage("Please choose where to Announce!")
-	end
-end
-
-function SaveAnnStore(a)
-	local b = 0;
-	if(AnnounceSetCheck:GetChecked()) then b = b + 1; end
-	if(ScreenAnnounceSetCheck:GetChecked()) then b = b + 2; end
-	if(GMAnnounceSetCheck:GetChecked()) then b = b + 4; end
-	if(b > 0) then
-		savedannmsg[a] = SetAnnounceText:GetText();
-		savedannflag[a] = (b);
-		ShowMessage("Announcement #"..a.." Saved!", "00FF00");
-	else
-		ShowMessage("Please choose where to Announce!");
-	end
-end
-
-function GoDownButtonCheck()
-local a = SavAnnTxtShow:GetNumber();
-	if (a >= 2) then
-		SavAnnTxtShow:SetNumber(a - 1);
-	end
-end
-
-function PreviewAnnTxt()
-local a = SavAnnTxtShow:GetNumber();
-if savedannmsg[a] then
-GMH_ShowMessage(savedannmsg[a])
-else
-ShowMessage("Announcement #"..a.." has not been set yet!")
-end
-end
+function Announce()
+    outSAY("announce "..AnnounceChatbox:GetText());
+ end
+ 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- ItemScript
 function RemoveItem()
@@ -282,8 +222,9 @@ function AddMoney()
 	outSAY("modify gold " ..(IntGold + IntSilver + IntCopper));
 end
 
+local playerName = UnitName("player");
 function RenameChar()
-    outSAY("renamechar "..PlayerFormBox:GetText());
+    outSAY("renamechar "..playerName.."  "..PlayerFormBox:GetText());
 end
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- MiscScript
@@ -304,11 +245,11 @@ function PlayAll()
 end
 
 function CastAll()
-	outSAY("admin castall "..AdminEditBox:GetText());
+	outSAY("castall "..AdminEditBox:GetText());
 end
 
 function Whisper()
-    outSAY("whisper "..PlayerFormBox:GetText());
+    outSAY("whisper "..WhisperNameBox:GetText().." "..WhisperBox:GetText());
 end
     
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -373,13 +314,6 @@ function Demorph2()
 end
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- NPCScript
-function AddItemVendor()
-	outSAY("npc vendoradditem "..NPCItemNumber:GetText());
-end
-
-function RemoveItemVendor()
-	outSAY("npc vendorremoveitem "..NPCItemNumber:GetText());
-end
 
 function SpawnNPC()
 	outSAY("npc spawn "..NPCNumber:GetText().." 1");
@@ -397,33 +331,14 @@ function NPCCome()
 	outSAY("npc come");
 end
 
-function NPCPos()
-	outSAY("npc possess");
-end
-
-function NPCUnPos()
-	outSAY("npc unpossess");
-end
-
 function NPCInfo()
 	outSAY("npc info");
 end
 
 function WaypointsAdd()
-	outSAY("waypoint add");
+	outSAY("npc addwaypoint");
 end
 
-function WaypointsDel()
-	outSAY("waypoint delete");
-end
-
-function WaypointsShow()
-	outSAY("waypoint show");
-end
-
-function WaypointsHide()
-	outSAY("waypoint hide");
-end
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- ObjectScript
 function TargetObject()
@@ -477,20 +392,20 @@ function CheatStatus()
 end
 
 function CheatUpdate()
-	if(FlyCheck:GetChecked()) then a = "on"; else a = "off"; end--fly
-	outSAY("cheat fly "..a);
-	if(GodCheck:GetChecked()) then a = "on"; else a = "off"; end--god
-	outSAY("cheat god "..a);
-	if(NCDCheck:GetChecked()) then a = "on"; else a = "off"; end--cooldown
-	outSAY("cheat cooldown "..a);
-	if(NCTCheck:GetChecked()) then a = "on"; else a = "off"; end--casttime
-	outSAY("cheat casttime "..a);
-	if(PowCheck:GetChecked()) then a = "on"; else a = "off"; end--power
-	outSAY("cheat power "..a);
-	if(AuraCheck:GetChecked()) then a = "on"; else a = "off"; end--stack
-	outSAY("cheat stack "..a);
-	if(TrigCheck:GetChecked()) then a = "on"; else a = "off"; end--triggers
-	outSAY("cheat triggerpass "..a);
+	if(FlyCheck:GetChecked()) then --fly
+	outSAY("cheat fly"); else end
+	if(GodCheck:GetChecked()) then--god
+	outSAY("cheat god"); else end
+	if(NCDCheck:GetChecked()) then--cooldown
+	outSAY("cheat cooldown"); else end
+	if(NCTCheck:GetChecked()) then--casttime
+	outSAY("cheat casttime"); else end
+	if(PowCheck:GetChecked()) then--power
+	outSAY("cheat power"); else end
+	if(AuraCheck:GetChecked()) then--stack
+	outSAY("cheat stack"); else end
+	if(TrigCheck:GetChecked()) then--triggers
+	outSAY("cheat triggerpass"); else end
 end 
 
 function FlySpeed()
@@ -504,10 +419,6 @@ end
 outSAY("mod speed "..Fly_Speed);
 end
 
-function FlightPath()
-	if(TaxiCheck:GetChecked()) then a = "on"; else a = "off"; end --Taxi
-		outSAY("cheat taxi "..a);
-end
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- PlayerScript
 
@@ -634,45 +545,6 @@ end
 function PhaseToggleSanc()
     outSAY("phase togglesanc");
 end
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
--- ProfessionsForm
-
-function LearnProfession()
-local selection = UIDropDownMenu_GetText(ProfComboBox)
-	if selection == "Alchemy" then
-		profession = 171;
-	elseif selection == "BSing" then
-		profession = 164;
-	elseif selection == "Enchanting" then
-		profession = 333;
-	elseif selection == "Engineering" then
-		profession = 202;
-	elseif selection == "Herbalism" then
-		profession = 182;
-	elseif selection == "Tailoring" then
-		profession = 197;
-	elseif selection == "Fishing" then
-		profession = 356;
-	elseif selection == "Poisons" then
-		profession = 40;
-	elseif selection == "Jewelcraft" then
-		profession = 755;
-	elseif selection == "LWing" then
-		profession = 165;
-	elseif selection == "Mining" then
-		profession = 186;
-	elseif selection == "Inscription" then
-		profession = 773;
-	elseif selection == "Skinning" then
-		profession = 393;
-	elseif selection == "Cooking" then
-		profession = 185;
-	elseif selection == "First Aid" then
-		profession = 129;
-	end
-	outSAY("learnsk "..profession);
-	outSAY("learnsk "..profession.." "..SkillLevel:GetText());
-end
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --QuestScript
@@ -693,33 +565,13 @@ function QuestRemove()
 	outSAY("quest remove "..QuestFormBox:GetText());
 end
 
-function QuestStatus()
-	outSAY("quest status "..QuestFormBox:GetText());
-end
-
-function QuestReward()
-	outSAY("quest reward "..QuestFormBox:GetText());
-end
-
-function QuestSpawn()
-if StartCheckButton:GetChecked() and FinishCheckButton:GetChecked() then
-	ShowMessage("Please select Start or Finish! Not Both!", "FF0000", 1);
-elseif FinishCheckButton:GetChecked() then
-	outSAY("quest finishspawn "..QuestFormBox:GetText());
-elseif StartCheckButton:GetChecked() then
-	outSAY("quest startspawn "..QuestFormBox:GetText());
-else
-	ShowMessage("Please select Start or Finish!", "FF0000", 1);
-end
-end
-
 function QuestAdd()
 if StartCheckButton:GetChecked() and FinishCheckButton:GetChecked() then
-	outSAY("quest addboth "..QuestFormBox:GetText());
+	outSAY("quest start "..QuestFormBox:GetText());
 elseif FinishCheckButton:GetChecked() then
-	outSAY("quest addfinish "..QuestFormBox:GetText());
+	outSAY("quest finish "..QuestFormBox:GetText());
 elseif StartCheckButton:GetChecked() then
-	outSAY("quest addstart "..QuestFormBox:GetText());
+	outSAY("quest start "..QuestFormBox:GetText());
 else
 	ShowMessage("Please select Start, Finish, or Both!", "FF0000", 1);
 end
@@ -727,11 +579,11 @@ end
 
 function QuestDel()
 if StartCheckButton:GetChecked() and FinishCheckButton:GetChecked() then
-	outSAY("quest delboth "..QuestFormBox:GetText());
+	outSAY("quest remove "..QuestFormBox:GetText());
 elseif FinishCheckButton:GetChecked() then
-	outSAY("quest delfinish "..QuestFormBox:GetText());
+	outSAY("quest remove "..QuestFormBox:GetText());
 elseif StartCheckButton:GetChecked() then
-	outSAY("quest delstart "..QuestFormBox:GetText());
+	outSAY("quest remove "..QuestFormBox:GetText());
 else
 	ShowMessage("Please select Start, Finish, or Both!", "FF0000", 1);
 end
@@ -1225,149 +1077,16 @@ function TitleAdd()
 	outSAY("title add "..TitleNumber:GetText());
 end
 
+function TitleKnown()
+    outSAY("title known");
+end
+
 function LearnAllTitles()
-	outSAY("title add 1");
-	outSAY("title add 2");
-	outSAY("title add 3");
-	outSAY("title add 4");
-	outSAY("title add 5");
-	outSAY("title add 6");
-	outSAY("title add 7");
-	outSAY("title add 8");
-	outSAY("title add 9");
-	outSAY("title add 10");
-	outSAY("title add 11");
-	outSAY("title add 12");
-	outSAY("title add 13");
-	outSAY("title add 14");
-	outSAY("title add 15");
-	outSAY("title add 16");
-	outSAY("title add 17");
-	outSAY("title add 18");
-	outSAY("title add 19");
-	outSAY("title add 20");
-	outSAY("title add 21");
-	outSAY("title add 22");
-	outSAY("title add 23");
-	outSAY("title add 24");
-	outSAY("title add 25");
-	outSAY("title add 26");
-	outSAY("title add 27");
-	outSAY("title add 28");
-	outSAY("title add 29");
-	outSAY("title add 30");
-	outSAY("title add 31");
-	outSAY("title add 32");
-	outSAY("title add 33");
-	outSAY("title add 34");
-	outSAY("title add 35");
-	outSAY("title add 36");
-	outSAY("title add 37");
-	outSAY("title add 38");
-	outSAY("title add 39");
-	outSAY("title add 40");
-	outSAY("title add 41");
-	outSAY("title add 42");
-	outSAY("title add 43");
-	outSAY("title add 44");
-	outSAY("title add 45");
-	outSAY("title add 46");
-	outSAY("title add 47");
-	outSAY("title add 48");
-	outSAY("title add 49");
-	outSAY("title add 50");
-	outSAY("title add 51");
-	outSAY("title add 52");
-	outSAY("title add 53");
-	outSAY("title add 54");
-	outSAY("title add 55");
-	outSAY("title add 56");
-	outSAY("title add 57");
-	outSAY("title add 58");
-	outSAY("title add 59");
-	outSAY("title add 60");
-	outSAY("title add 61");
-	outSAY("title add 62");
-	outSAY("title add 63");
-	outSAY("title add 64");
-	outSAY("title add 65");
-	outSAY("title add 66");
-	outSAY("title add 67");
-	outSAY("title add 68");
-	outSAY("title add 69");
-	outSAY("title add 70");
-	outSAY("title add 71");
-	outSAY("title add 72");
-	outSAY("title add 73");
-	outSAY("title add 74");
-	outSAY("title add 75");
-	outSAY("title add 76");
-	outSAY("title add 77");
-	outSAY("title add 78");
-	outSAY("title add 79");
-	outSAY("title add 80");
-	outSAY("title add 81");
-	outSAY("title add 82");
-	outSAY("title add 83");
-	outSAY("title add 84");
-	outSAY("title add 85");
-	outSAY("title add 86");
-	outSAY("title add 87");
-	outSAY("title add 88");
-	outSAY("title add 89");
-	outSAY("title add 90");
-	outSAY("title add 91");
-	outSAY("title add 92");
-	outSAY("title add 93");
-	outSAY("title add 94");
-	outSAY("title add 95");
-	outSAY("title add 96");
-	outSAY("title add 97");
-	outSAY("title add 98");
-	outSAY("title add 99");
-	outSAY("title add 100");
-	outSAY("title add 101");
-	outSAY("title add 102");
-	outSAY("title add 103");
-	outSAY("title add 104");
-	outSAY("title add 105");
-	outSAY("title add 106");
-	outSAY("title add 107");
-	outSAY("title add 108");
-	outSAY("title add 109");
-	outSAY("title add 110");
-	outSAY("title add 111");
-	outSAY("title add 112");
-	outSAY("title add 113");
-	outSAY("title add 114");
-	outSAY("title add 115");
-	outSAY("title add 116");
-	outSAY("title add 117");
-	outSAY("title add 118");
-	outSAY("title add 119");
-	outSAY("title add 120");
-	outSAY("title add 121");
-	outSAY("title add 122");
-	outSAY("title add 123");
-	outSAY("title add 124");
-	outSAY("title add 125");
-	outSAY("title add 126");
-	outSAY("title add 127");
-	outSAY("title add 128");
-	outSAY("title add 129");
-	outSAY("title add 130");
-	outSAY("title add 131");
-	outSAY("title add 132");
-	outSAY("title add 133");
-	outSAY("title add 134");
-	outSAY("title add 135");
-	outSAY("title add 136");
-	outSAY("title add 137");
-	outSAY("title add 138");
-	outSAY("title add 139");
-	outSAY("title add 140");
-	outSAY("title add 141");
-	outSAY("title add 142");
+    i=1
+    repeat
+        outSAY("title add "..i);
+        i=i+1
+        until i==178
 end	
 	
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1382,6 +1101,10 @@ end
 
 function LearnAll()
 	outSAY("learn all");
+end
+
+function SpellCastID()
+    outSAY("cast "..SpellNumber:GetText());
 end
 
 function LookupSpell()
@@ -1417,12 +1140,8 @@ function PortPlayer()
 	outSAY("recall portplayer "..ToPlayerName:GetText().." "..ZoneName:GetText());
 end
 
-function PortUs()
-	outSAY("recall portus "..ZoneName:GetText());
-end
-
 function WorldPort()
-	outSAY("worldport "..MapID:GetText().." "..XCord:GetText().." "..YCord:GetText().." "..ZCord:GetText());
+	outSAY("worldport "..MapID:GetText().." "..XCord:GetText().." "..YCord:GetText().." "..ZCord:GetText().." "..OrientationBox:GetText());
 end
 
 function GPS()
@@ -1533,24 +1252,8 @@ function GMH_Announce(msg)
 	outSAY("announce "..msg);
 end
 
-function GMH_WAnnounce(msg)
-	outSAY("wannounce "..msg);
-end
-
-function GMH_GMAnnounce(msg)
-	outSAY("gmannounce "..msg);
-end
-
 function GMH_RecallPort(msg)
 	outSAY("recall port "..msg);
-end
-
-function GMH_SavedAnnounce(msg)
-	SaveAnnSend(tonumber(msg));
-end
-
-function GMH_ShowSavedAnn(msg)
-	ShowSavedAnn(tonumber(msg));
 end
 
 function GMH_Learn(msg)
@@ -1571,10 +1274,6 @@ end
 
 function GMH_AdvanceAllSkills(msg)
 	outSAY("advanceallskills "..msg);
-end
-
-function GMH_AchievementComplete(msg)
-	outSAY("achieve complete "..msg);
 end
 
 function GMH_Lookup(msg)
@@ -1673,73 +1372,73 @@ SLASH_GMHSHOWMESSAGE1="/showmessage";
 ---------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- ItemSearchScript
-
+----------The following code is under development. Please disregard.
 -- Below vars are used throughout the item search
-item_search_results = {}
-itemName = {}
-itemSearched = false
+--item_search_results = {}
+--itemName = {}
+--itemSearched = false
 
-i = 1;
+--i = 1;
 
 -- Fired when a server message is sent to the client
-function Chat_OnEvent(event, text)
-	if string.find(text, "Item") and ItemFormSearch:IsShown() and not itemSearched then
-	if (i < 26) then
+--function Chat_OnEvent(event, text)
+	--if string.find(text, "Item") and ItemFormSearch:IsShown() and not itemSearched then
+	--if (i < 26) then
 		-- If the detected string is an item result
-		idlength, _, _, _ = string.find(text, ":");
-		item_search_results[i] = string.sub(text, 6, idlength-1);
-		itemName[i] = text;
-		ProcessItemSearch(item_search_results[i]);
-		i = i + 1;
-	end	
-	elseif string.find(text, "Search completed in ") then
-	itemSearched = true
-	elseif string.find(text, "Starting search of item ") then -- Reset if its a new search
-		for i=1, 25 do
-			getglobal("ItemFormSearchTexture"..i):Hide();
-			getglobal("ItemFormSearchLabelItemID"..i):Hide();
-			getglobal("ItemFormSearchButton"..i):Hide();
-			itemSearched = false
-		end
-		i = 1;
-	end
-end
-
-function GetItemInfoTexture(name)
-_, _, _, _, _, _, _, _, _, texture = GetItemInfo(name);
-return texture
-end
+		--idlength, _, _, _ = string.find(text, ":");
+		--item_search_results[i] = string.sub(text, 6, idlength-1);
+		--itemName[i] = text;
+		--ProcessItemSearch(item_search_results[i]);
+		--i = i + 1;
+	--end	
+	--elseif string.find(text, "Search completed in ") then
+	--itemSearched = true
+	--elseif string.find(text, "Starting search of item ") then -- Reset if its a new search
+		--for i=1, 25 do
+			--getglobal("ItemFormSearchTexture"..i):Hide();
+			--getglobal("ItemFormSearchLabelItemID"..i):Hide();
+			--getglobal("ItemFormSearchButton"..i):Hide();
+			--itemSearched = false
+		--end
+		--i = 1;
+	--end
+--end
+--------
+---function GetItemInfoTexture(name)
+--_, _, _, _, _, _, _, _, _, texture = GetItemInfo(name);
+--return texture
+--end
 
 -- Function to update each button when a result is recieved by the client
-function ProcessItemSearch(itemid)
-	getglobal("ItemFormSearchTexture"..i):Show();
-	getglobal("ItemFormSearchLabelItemID"..i):Show();
-	getglobal("ItemFormSearchButton"..i):Show();
+--function ProcessItemSearch(itemid)
+	--getglobal("ItemFormSearchTexture"..i):Show();
+	--getglobal("ItemFormSearchLabelItemID"..i):Show();
+	--getglobal("ItemFormSearchButton"..i):Show();
 	-- Update "number of results" text
-	text = "Results Found: "..i;
-	ItemFormSearchLabel2Label:SetText(text);
-	getglobal("ItemFormSearchLabelItemID"..i.."Label"):SetText(itemName[i]);
-	if(GetItemInfoTexture("item:"..itemid)) then
-	getglobal("ItemFormSearchTexture"..i.."Texture"):SetTexture(GetItemInfoTexture("item:"..itemid));
-	elseif(GetItemIcon("item:"..itemid)) then
-	getglobal("ItemFormSearchTexture"..i.."Texture"):SetTexture(GetItemIcon("item:"..itemid));
-	else
-	getglobal("ItemFormSearchTexture"..i.."Texture"):SetTexture("Interface\\Icons\\INV_Misc_QuestionMark");
-	end
-end
+	--text = "Results Found: "..i;
+	--ItemFormSearchLabel2Label:SetText(text);
+	--getglobal("ItemFormSearchLabelItemID"..i.."Label"):SetText(itemName[i]);
+	--if(GetItemInfoTexture("item:"..itemid)) then
+	--getglobal("ItemFormSearchTexture"..i.."Texture"):SetTexture(GetItemInfoTexture("item:"..itemid));
+	--elseif(GetItemIcon("item:"..itemid)) then
+	--getglobal("ItemFormSearchTexture"..i.."Texture"):SetTexture(GetItemIcon("item:"..itemid));
+	--else
+	--getglobal("ItemFormSearchTexture"..i.."Texture"):SetTexture("Interface\\Icons\\INV_Misc_QuestionMark");
+	--end
+--end
 
 -- When a button is rolled over, show tooltip and update vars based on user cache
-function ResultButton_OnEnter(button_number, self)
-	GameTooltip:ClearLines();
-	GameTooltip:SetOwner(self, "ANCHOR_RIGHT", -(self:GetWidth() / 2), 24)
-	GameTooltip:SetHyperlink("item:"..item_search_results[button_number]..":0:0:0:0:0:0:0");
-	GameTooltip:AddLine("Click to add to inventory");
-	GameTooltip:Show();
-end
+--function ResultButton_OnEnter(button_number, self)
+	--GameTooltip:ClearLines();
+	--GameTooltip:SetOwner(self, "ANCHOR_RIGHT", -(self:GetWidth() / 2), 24)
+	--GameTooltip:SetHyperlink("item:"..item_search_results[button_number]..":0:0:0:0:0:0:0");
+	--GameTooltip:AddLine("Click to add to inventory");
+	--GameTooltip:Show();
+--end
 
-function ResultButton_OnClick(button_number)
-    outSAY("additem "..item_search_results[button_number]);
-end
+--function ResultButton_OnClick(button_number)
+    --outSAY("additem "..item_search_results[button_number]);
+--end
 ---------------------------------------------
 --			End of Item search		   --
 ---------------------------------------------

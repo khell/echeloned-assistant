@@ -6,7 +6,7 @@
       <AbsDimension x="146" y="145" />
     </Size>
     <Anchors>
-      <Anchor point="RIGHT" relativeTo="UIParent">
+      <Anchor point="CENTER" relativeTo="UIParent">
         <Offset>
           <AbsDimension x="0" y="0" />
         </Offset>
@@ -401,10 +401,7 @@ UIDropDownMenu_Initialize(this, cb_init_fn)
           </Anchor>
         </Anchors>
         <Scripts>
-          <OnClick>if WeaponSkillLvl:GetNumLetters() &lt; 1 then
-GMH_EmptyField()
-LearnWepsk(); WeaponSkillLvl:ClearFocus()
-end
+          <OnClick>LearnWepsk(); WeaponSkillLvl:ClearFocus()
 </OnClick>
         </Scripts>
         <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">

@@ -3,10 +3,10 @@
   <Frame name="PhaseForm" hidden="true" parent="UIParent" movable="true" resizable="true" enableKeyboard="true" clampedToScreen="true">
     <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508883-59c2-4f83-ae10-27aaad48391b" />-->
     <Size>
-      <AbsDimension x="387" y="442" />
+      <AbsDimension x="617" y="350" />
     </Size>
     <Anchors>
-      <Anchor point="RIGHT" relativeTo="UIParent">
+      <Anchor point="TOP" relativeTo="UIParent">
         <Offset>
           <AbsDimension x="0" y="0" />
         </Offset>
@@ -71,7 +71,7 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="47" y="-399" />
+              <AbsDimension x="468" y="-175" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -108,7 +108,7 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="256" y="-371" />
+              <AbsDimension x="362" y="-287" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -145,7 +145,7 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="44" y="-371" />
+              <AbsDimension x="465" y="-203" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -177,12 +177,12 @@
       <Frame name="$parentLabel4">
         <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508885-59c2-4f83-ae10-27aaad48391b" />-->
         <Size>
-          <AbsDimension x="84" y="86" />
+          <AbsDimension x="100" y="86" />
         </Size>
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="153" y="-31" />
+              <AbsDimension x="256" y="-31" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -210,12 +210,12 @@
       <Button name="$parentButton27" text="Done">
         <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508884-59c2-4f83-ae10-27aaad48391b" />-->
         <Size>
-          <AbsDimension x="100" y="22" />
+          <AbsDimension x="51" y="22" />
         </Size>
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="256" y="-399" />
+              <AbsDimension x="517" y="-315" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -252,7 +252,7 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="150" y="-371" />
+              <AbsDimension x="362" y="-175" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -289,7 +289,7 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="256" y="-343" />
+              <AbsDimension x="468" y="-287" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -363,7 +363,7 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="256" y="-287" />
+              <AbsDimension x="362" y="-231" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -400,7 +400,7 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="256" y="-259" />
+              <AbsDimension x="362" y="-259" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -437,7 +437,7 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="256" y="-231" />
+              <AbsDimension x="468" y="-259" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -474,7 +474,7 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="256" y="-203" />
+              <AbsDimension x="468" y="-231" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -548,7 +548,7 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="150" y="-343" />
+              <AbsDimension x="256" y="-203" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -585,7 +585,7 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="150" y="-315" />
+              <AbsDimension x="256" y="-231" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -622,7 +622,7 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="150" y="-287" />
+              <AbsDimension x="256" y="-259" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -659,7 +659,7 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="256" y="-315" />
+              <AbsDimension x="362" y="-203" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -807,7 +807,7 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="44" y="-343" />
+              <AbsDimension x="256" y="-287" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -881,7 +881,7 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="44" y="-315" />
+              <AbsDimension x="150" y="-287" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -992,7 +992,7 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="102" y="-147" />
+              <AbsDimension x="214" y="-147" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -1129,7 +1129,7 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="44" y="-31" />
+              <AbsDimension x="84" y="-31" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -1157,12 +1157,12 @@
       <Button name="$parentButton4" text="Phase Delete">
         <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508884-59c2-4f83-ae10-27aaad48391b" />-->
         <Size>
-          <AbsDimension x="100" y="18" />
+          <AbsDimension x="113" y="18" />
         </Size>
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="256" y="-123" />
+              <AbsDimension x="446" y="-123" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -1194,12 +1194,12 @@
       <Button name="$parentButton3" text="Phase Create">
         <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508884-59c2-4f83-ae10-27aaad48391b" />-->
         <Size>
-          <AbsDimension x="100" y="33" />
+          <AbsDimension x="113" y="33" />
         </Size>
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="256" y="-84" />
+              <AbsDimension x="446" y="-84" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -1236,7 +1236,7 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="243" y="-55" />
+              <AbsDimension x="446" y="-55" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -1301,7 +1301,7 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="243" y="-31" />
+              <AbsDimension x="446" y="-31" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -1329,12 +1329,12 @@
       <Frame name="$parentLabel1">
         <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508885-59c2-4f83-ae10-27aaad48391b" />-->
         <Size>
-          <AbsDimension x="84" y="18" />
+          <AbsDimension x="100" y="18" />
         </Size>
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="153" y="-123" />
+              <AbsDimension x="256" y="-123" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -1367,7 +1367,7 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="44" y="-55" />
+              <AbsDimension x="84" y="-55" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -1427,12 +1427,12 @@
       <Button name="$parentButton2" text="Phase Exit">
         <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508884-59c2-4f83-ae10-27aaad48391b" />-->
         <Size>
-          <AbsDimension x="97" y="18" />
+          <AbsDimension x="103" y="18" />
         </Size>
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="47" y="-123" />
+              <AbsDimension x="84" y="-123" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -1464,12 +1464,12 @@
       <Button name="$parentButton1" text="Phase Enter">
         <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508884-59c2-4f83-ae10-27aaad48391b" />-->
         <Size>
-          <AbsDimension x="97" y="34" />
+          <AbsDimension x="103" y="34" />
         </Size>
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="47" y="-83" />
+              <AbsDimension x="84" y="-83" />
             </Offset>
           </Anchor>
         </Anchors>

@@ -3,7 +3,7 @@
   <Frame name="BanForm" hidden="true" parent="UIParent" movable="true" resizable="true" enableKeyboard="true" clampedToScreen="true">
     <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508883-59c2-4f83-ae10-27aaad48391b" />-->
     <Size>
-      <AbsDimension x="141" y="439" />
+      <AbsDimension x="141" y="417" />
     </Size>
     <Anchors>
       <Anchor point="RIGHT" relativeTo="UIParent">
@@ -38,7 +38,7 @@
           </Anchors>
           <TexCoords left="0.2" right="0.8" top="0" bottom="0.6" />
         </Texture>
-        <FontString name="$parentTitleString" font="Fonts\FRIZQT__.TTF" text="Ban Stick">
+        <FontString name="$parentTitleString" font="Fonts\FRIZQT__.TTF" text="Ban Hammer">
           <Size>
             <AbsDimension x="140" y="0" />
           </Size>
@@ -71,7 +71,7 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="19" y="-198" />
+              <AbsDimension x="19" y="-175" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -145,7 +145,7 @@ end
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="19" y="-405" />
+              <AbsDimension x="19" y="-382" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -349,7 +349,7 @@ end
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="19" y="-267" />
+              <AbsDimension x="19" y="-244" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -390,7 +390,7 @@ end
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="19" y="-336" />
+              <AbsDimension x="19" y="-313" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -427,7 +427,7 @@ end
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="19" y="-359" />
+              <AbsDimension x="19" y="-336" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -464,7 +464,7 @@ end
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="19" y="-244" />
+              <AbsDimension x="19" y="-221" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -505,7 +505,7 @@ end
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="19" y="-313" />
+              <AbsDimension x="19" y="-290" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -546,7 +546,7 @@ end
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="19" y="-175" />
+              <AbsDimension x="19" y="-152" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -587,7 +587,7 @@ end
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="19" y="-221" />
+              <AbsDimension x="19" y="-198" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -728,7 +728,7 @@ end
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="19" y="-290" />
+              <AbsDimension x="19" y="-267" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -769,7 +769,7 @@ end
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="19" y="-382" />
+              <AbsDimension x="19" y="-359" />
             </Offset>
           </Anchor>
         </Anchors>
