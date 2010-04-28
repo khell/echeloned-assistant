@@ -346,7 +346,7 @@ function TargetObject()
 end
 
 function LookupObject()
-	outSAY("lookup object "..ObjectNumber:GetText());
+	outSAY("lookup gobject "..ObjectNumber:GetText());
 end
 
 function ObjectScale()
@@ -1137,7 +1137,7 @@ function DelPort()
 end
 
 function GPSBuild()
-    outSAY("gps "..XCord:GetText().." "..YCord:GetText().." "..ZCord:GetText().." "..OrientationBox:GetText());
+    outSAY("gps "..XCord2:GetText().." "..YCord2:GetText().." "..ZCord2:GetText().." "..OrientationBox2:GetText());
 end
 
 function PortPlayer()

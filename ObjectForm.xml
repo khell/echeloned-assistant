@@ -63,6 +63,43 @@
       </Layer>
     </Layers>
     <Frames>
+      <Button name="$parentButton7" text="GPS (no build)">
+        <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508884-59c2-4f83-ae10-27aaad48391b" />-->
+        <Size>
+          <AbsDimension x="68" y="38" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="381" y="-111" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnClick>GPSBuild()
+</OnClick>
+        </Scripts>
+        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </NormalTexture>
+        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </PushedTexture>
+        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </DisabledTexture>
+        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </HighlightTexture>
+        <ButtonText name="$parentText">
+          <FontHeight>
+            <AbsValue val="10" />
+          </FontHeight>
+        </ButtonText>
+        <NormalFont style="GameFontNormal" />
+        <HighlightFont style="GameFontHighlight" />
+        <DisabledFont style="GameFontDisable" />
+      </Button>
       <Frame name="$parentLabel4">
         <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508885-59c2-4f83-ae10-27aaad48391b" />-->
         <Size>
@@ -109,7 +146,9 @@
           </Anchor>
         </Anchors>
         <Scripts>
-          <OnClick>GPSBuild()</OnClick>
+          <OnClick>GPSBuild()
+; PlaceObject();
+</OnClick>
         </Scripts>
         <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
@@ -198,7 +237,7 @@
           </Layer>
         </Layers>
       </Frame>
-      <EditBox name="OrientationBox" enableMouse="true">
+      <EditBox name="OrientationBox2" enableMouse="true">
         <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508887-59c2-4f83-ae10-27aaad48391b" />-->
         <Size>
           <AbsDimension x="55" y="22" />
@@ -242,6 +281,11 @@
             </Texture>
           </Layer>
         </Layers>
+        <Scripts>
+          <OnLoad>self:SetAutoFocus(false);</OnLoad>
+          <OnHide>self:SetText("");</OnHide>
+          <OnEscapePressed>self:ClearFocus(self);</OnEscapePressed>
+        </Scripts>
         <FontString font="Fonts\ARIALN.TTF">
           <FontHeight>
             <AbsValue val="14" />
@@ -321,7 +365,7 @@
           </Layer>
         </Layers>
       </Frame>
-      <EditBox name="ZCord" enableMouse="true">
+      <EditBox name="ZCord2" enableMouse="true">
         <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508887-59c2-4f83-ae10-27aaad48391b" />-->
         <Size>
           <AbsDimension x="55" y="20" />
@@ -365,6 +409,11 @@
             </Texture>
           </Layer>
         </Layers>
+        <Scripts>
+          <OnLoad>self:SetAutoFocus(false);</OnLoad>
+          <OnHide>self:SetText("");</OnHide>
+          <OnEscapePressed>self:ClearFocus(self);</OnEscapePressed>
+        </Scripts>
         <FontString font="Fonts\ARIALN.TTF">
           <FontHeight>
             <AbsValue val="14" />
@@ -378,7 +427,7 @@
           </Shadow>
         </FontString>
       </EditBox>
-      <EditBox name="YCord" enableMouse="true">
+      <EditBox name="YCord2" enableMouse="true">
         <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508887-59c2-4f83-ae10-27aaad48391b" />-->
         <Size>
           <AbsDimension x="55" y="22" />
@@ -422,6 +471,11 @@
             </Texture>
           </Layer>
         </Layers>
+        <Scripts>
+          <OnLoad>self:SetAutoFocus(false);</OnLoad>
+          <OnHide>self:SetText("");</OnHide>
+          <OnEscapePressed>self:ClearFocus(self);</OnEscapePressed>
+        </Scripts>
         <FontString font="Fonts\ARIALN.TTF">
           <FontHeight>
             <AbsValue val="14" />
@@ -435,7 +489,7 @@
           </Shadow>
         </FontString>
       </EditBox>
-      <EditBox name="XCord" enableMouse="true">
+      <EditBox name="XCord2" enableMouse="true">
         <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508887-59c2-4f83-ae10-27aaad48391b" />-->
         <Size>
           <AbsDimension x="55" y="22" />
@@ -479,6 +533,11 @@
             </Texture>
           </Layer>
         </Layers>
+        <Scripts>
+          <OnLoad>self:SetAutoFocus(false);</OnLoad>
+          <OnHide>self:SetText("");</OnHide>
+          <OnEscapePressed>self:ClearFocus(self);</OnEscapePressed>
+        </Scripts>
         <FontString font="Fonts\ARIALN.TTF">
           <FontHeight>
             <AbsValue val="14" />
