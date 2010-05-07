@@ -1,8 +1,9 @@
 ## Interface: 30300
 ## Title: Echeloned Assistant
 ## Author: Sidriel
-## Version: 1.1.1
+## Version: 1.3.2
 ## Notes: An addon to manage GM commands in EchelonedWoW. Based off GMH by Maven.
+## eMail: echeloned@sidriel.com
 ## X-Revision: 280
 ## DefaultState: Enabled
 ## LoadOnDemand: 0

@@ -141,7 +141,7 @@ end
 -- RoleplayScript
 
 function RoleplayAdd()
-    outSAY("roleplay addselftolist "..RoleplayType:GetText());
+    outSAY("roleplay addself "..RoleplayType:GetText());
 end
 
 function RoleplayRemove()
@@ -149,15 +149,15 @@ function RoleplayRemove()
 end
 
 function RoleplayListPlayer()
-    outSAY("roleplay listplayers");
+    outSAY("roleplay networked");
 end
 
 function RoleplayListRo()
-    outSAY("roleplay listro");
+    outSAY("roleplay current");
 end
 
 function CreateRoleplay()
-    outSAY("roleplay createroleplay "..RoleplayCreatebox:GetText());
+    outSAY("roleplay create "..RoleplayCreatebox:GetText());
 end
 
 function RoleplayDelete()
@@ -519,11 +519,11 @@ function PhaseWeather()
 end
 
 function PhaseToggleFlight()
-    outSAY("phase toggleflight");
+    outSAY("phase toggle flight");
 end
 
 function PhaseToggleCheats()
-    outSAY("phase togglecheats");
+    outSAY("phase toggle cheats");
 end
 
 function PhasePlaySound()
@@ -535,7 +535,7 @@ function PhaseAnn()
 end
 
 function PhaseToggleCustom()
-    outSAY("phase togglecustom");
+    outSAY("phase toggle custom");
 end
 
 function PhaseSetStarting()
@@ -543,7 +543,11 @@ function PhaseSetStarting()
 end
 
 function PhaseToggleSanc()
-    outSAY("phase togglesanc");
+    outSAY("phase toggle sanc");
+end
+
+function Phasetogglespells()
+    outSAY("phase toggle restr");
 end
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
