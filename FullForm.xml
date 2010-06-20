@@ -12,7 +12,7 @@
         </Offset>
       </Anchor>
     </Anchors>
-    <Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+    <Backdrop bgFile="Interface\Addons\EchelonedAssistant\art\backdrop.tga" tile="false">
       <BackgroundInsets>
         <AbsInset left="11" right="12" top="12" bottom="11" />
       </BackgroundInsets>
@@ -25,9 +25,9 @@
     </Backdrop>
     <Layers>
       <Layer>
-        <Texture name="$parentTitleBorder" file="Interface\DialogFrame\UI-DialogBox-Header">
+        <Texture name="$parentTitleBorder" file="ENVIRONMENTS\STARS\AUCHINDOUN_VORTEXCLOUD01.blp">
           <Size>
-            <AbsDimension x="160" y="32" />
+            <AbsDimension x="125" y="32" />
           </Size>
           <Anchors>
             <Anchor point="TOP">
@@ -63,43 +63,6 @@
       </Layer>
     </Layers>
     <Frames>
-      <Button name="$parentButton4" text="Ann">
-        <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508884-59c2-4f83-ae10-27aaad48391b" />-->
-        <Size>
-          <AbsDimension x="34" y="17" />
-        </Size>
-        <Anchors>
-          <Anchor point="TOPLEFT">
-            <Offset>
-              <AbsDimension x="12" y="-3" />
-            </Offset>
-          </Anchor>
-        </Anchors>
-        <Scripts>
-          <OnClick>ChatForm:Show();FullForm:Hide();
-</OnClick>
-        </Scripts>
-        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
-          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
-        </NormalTexture>
-        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
-          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
-        </PushedTexture>
-        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
-          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
-        </DisabledTexture>
-        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
-          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
-        </HighlightTexture>
-        <ButtonText name="$parentText">
-          <FontHeight>
-            <AbsValue val="10" />
-          </FontHeight>
-        </ButtonText>
-        <NormalFont style="GameFontNormal" />
-        <HighlightFont style="GameFontHighlight" />
-        <DisabledFont style="GameFontDisable" />
-      </Button>
       <Button name="$parentButton3" text="Roleplay">
         <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508884-59c2-4f83-ae10-27aaad48391b" />-->
         <Size>
@@ -113,19 +76,19 @@
           </Anchor>
         </Anchors>
         <Scripts>
-          <OnClick>RoleplayForm:Show(); FullForm:Hide()
+          <OnClick>RoleplayFormToggle();
 </OnClick>
         </Scripts>
-        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </NormalTexture>
-        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </PushedTexture>
-        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </DisabledTexture>
-        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </HighlightTexture>
         <ButtonText name="$parentText">
@@ -150,19 +113,19 @@
           </Anchor>
         </Anchors>
         <Scripts>
-          <OnClick>PhaseForm:Show(); FullForm:Hide();
+          <OnClick>PhaseFormToggle(); 
 </OnClick>
         </Scripts>
-        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </NormalTexture>
-        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </PushedTexture>
-        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </DisabledTexture>
-        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </HighlightTexture>
         <ButtonText name="$parentText">
@@ -188,19 +151,19 @@
           </Anchor>
         </Anchors>
         <Scripts>
-          <OnClick>QuestForm:Show(); FullForm:Hide();
+          <OnClick>QuestFormToggle(); 
 </OnClick>
         </Scripts>
-        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </NormalTexture>
-        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </PushedTexture>
-        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </DisabledTexture>
-        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </HighlightTexture>
         <ButtonText name="$parentText">
@@ -225,19 +188,19 @@
           </Anchor>
         </Anchors>
         <Scripts>
-          <OnClick>TeleForm:Show(); FullForm:Hide();
+          <OnClick>TeleFormToggle(); 
 </OnClick>
         </Scripts>
-        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </NormalTexture>
-        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </PushedTexture>
-        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </DisabledTexture>
-        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </HighlightTexture>
         <ButtonText name="$parentText">
@@ -262,19 +225,19 @@
           </Anchor>
         </Anchors>
         <Scripts>
-          <OnClick>ItemForm:Show(); FullForm:Hide();
+          <OnClick>ItemFormToggle(); 
 </OnClick>
         </Scripts>
-        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </NormalTexture>
-        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </PushedTexture>
-        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </DisabledTexture>
-        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </HighlightTexture>
         <ButtonText name="$parentText">
@@ -299,19 +262,19 @@
           </Anchor>
         </Anchors>
         <Scripts>
-          <OnClick>SkillForm:Show(); FullForm:Hide();
+          <OnClick>SkillFormToggle(); 
 </OnClick>
         </Scripts>
-        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </NormalTexture>
-        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </PushedTexture>
-        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </DisabledTexture>
-        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </HighlightTexture>
         <ButtonText name="$parentText">
@@ -336,19 +299,19 @@
           </Anchor>
         </Anchors>
         <Scripts>
-          <OnClick>BanForm:Show(); FullForm:Hide();
+          <OnClick>BanFormToggle(); 
 </OnClick>
         </Scripts>
-        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </NormalTexture>
-        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </PushedTexture>
-        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </DisabledTexture>
-        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </HighlightTexture>
         <ButtonText name="$parentText">
@@ -376,16 +339,16 @@
           <OnClick>InterfaceOptionsFrame_OpenToCategory("Views"); FullForm:Hide(); addonopen=false;
 </OnClick>
         </Scripts>
-        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </NormalTexture>
-        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </PushedTexture>
-        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </DisabledTexture>
-        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </HighlightTexture>
         <ButtonText name="$parentText">
@@ -415,16 +378,16 @@ FullForm:Hide();
 TT_JoinChannel();
 </OnClick>
         </Scripts>
-        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </NormalTexture>
-        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </PushedTexture>
-        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </DisabledTexture>
-        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </HighlightTexture>
         <ButtonText name="$parentText">
@@ -449,19 +412,19 @@ TT_JoinChannel();
           </Anchor>
         </Anchors>
         <Scripts>
-          <OnClick>ObjectForm:Show(); FullForm:Hide();
+          <OnClick>ObjectFormToggle(); 
 </OnClick>
         </Scripts>
-        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </NormalTexture>
-        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </PushedTexture>
-        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </DisabledTexture>
-        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </HighlightTexture>
         <ButtonText name="$parentText">
@@ -486,19 +449,19 @@ TT_JoinChannel();
           </Anchor>
         </Anchors>
         <Scripts>
-          <OnClick>SpellForm:Show(); FullForm:Hide();
+          <OnClick>SpellFormToggle(); 
 </OnClick>
         </Scripts>
-        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </NormalTexture>
-        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </PushedTexture>
-        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </DisabledTexture>
-        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </HighlightTexture>
         <ButtonText name="$parentText">
@@ -523,19 +486,19 @@ TT_JoinChannel();
           </Anchor>
         </Anchors>
         <Scripts>
-          <OnClick>NPCForm:Show(); FullForm:Hide();
+          <OnClick>NPCFormToggle(); 
 </OnClick>
         </Scripts>
-        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </NormalTexture>
-        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </PushedTexture>
-        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </DisabledTexture>
-        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </HighlightTexture>
         <ButtonText name="$parentText">
@@ -560,19 +523,19 @@ TT_JoinChannel();
           </Anchor>
         </Anchors>
         <Scripts>
-          <OnClick>PlayerForm:Show(); FullForm:Hide();
+          <OnClick>PlayerFormToggle(); 
 </OnClick>
         </Scripts>
-        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </NormalTexture>
-        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </PushedTexture>
-        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </DisabledTexture>
-        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </HighlightTexture>
         <ButtonText name="$parentText">
@@ -600,16 +563,16 @@ TT_JoinChannel();
           <OnClick>BGLeave()
 </OnClick>
         </Scripts>
-        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </NormalTexture>
-        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </PushedTexture>
-        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </DisabledTexture>
-        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </HighlightTexture>
         <ButtonText name="$parentText">
@@ -634,19 +597,19 @@ TT_JoinChannel();
           </Anchor>
         </Anchors>
         <Scripts>
-          <OnClick>ModifyForm:Show(); FullForm:Hide();
+          <OnClick>ModifyFormToggle(); 
 </OnClick>
         </Scripts>
-        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </NormalTexture>
-        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </PushedTexture>
-        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </DisabledTexture>
-        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </HighlightTexture>
         <ButtonText name="$parentText">
@@ -671,19 +634,19 @@ TT_JoinChannel();
           </Anchor>
         </Anchors>
         <Scripts>
-          <OnClick>TitleForm:Show(); FullForm:Hide();
+          <OnClick>TitleFormToggle(); 
 </OnClick>
         </Scripts>
-        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </NormalTexture>
-        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </PushedTexture>
-        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </DisabledTexture>
-        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </HighlightTexture>
         <ButtonText name="$parentText">
@@ -708,19 +671,19 @@ TT_JoinChannel();
           </Anchor>
         </Anchors>
         <Scripts>
-          <OnClick>OverridesForm:Show(); FullForm:Hide();
+          <OnClick>OverridesFormToggle(); 
 </OnClick>
         </Scripts>
-        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </NormalTexture>
-        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </PushedTexture>
-        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </DisabledTexture>
-        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </HighlightTexture>
         <ButtonText name="$parentText">
@@ -734,7 +697,7 @@ TT_JoinChannel();
       </Button>
     </Frames>
     <Scripts>
-      <OnLoad>GMHelperOnLoad(self);
+      <OnLoad>
 self:RegisterForDrag("RightButton");
 </OnLoad>
       <OnDragStart>self:StartMoving()

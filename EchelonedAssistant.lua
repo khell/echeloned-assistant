@@ -1,36 +1,78 @@
-﻿--**********************************************************************
---**********************************************************************
--- SavedVariables
+﻿EchelonedAssistant = LibStub("AceAddon-3.0"):NewAddon("EchelonedAssistant", "AceConsole-3.0", "AceEvent-3.0")
 TicketChannel = "gm_sync_channel";
 
-function OpenMain()
-	if(gmhview == 2) then
-		MinipForm:Show();
-	elseif(gmhview == 3) then
-		MiniForm:Show();
-	else
-		FullForm:Show();
-	end
+--handling of the slash commands--
+local options = { 
+    name = "EchelonedAssistant",
+    handler = EchelonedAssistant,
+    type = "group",
+    args = {
+        show = {
+            type = "execute",
+            func = "OpenMain",
+            name = "Main Window of EchelonedAssistant"
+        },
+        obj = {
+                type = "execute",
+                func = "Objectshow",
+                name = "Object form"
+            },
+    },
+}
+
+function EchelonedAssistant:OnInitialize()
+    print("EchelonedAssistant loaded type /ewa to show options.")
+    LibStub("AceConfig-3.0"):RegisterOptionsTable("EchelonedAssistant", options, {"ewa", "ech", "ea"})
 end
 
-function ToggleChatbox()
-    if (ChatForm == hidden) then 
-        ChatForm:Show();
-    elseif (ChatForm == shown) then
-        ChatForm:Hide();
-    end
-end
-    
 
-function ToggleAddon()
+
+-- Binding Variables
+BINDING_HEADER_EchelonedAssistant = "Echeloned Assistant";
+BINDING_NAME_ToggleAddon = "Toggles Echeloned Assistant";
+BINDING_HEADER_Chatbox = "Chatbox";
+BINDING_NAME_ToggleChatbox = "toggle Chatbox";
+BINDING_HEADER_MYHEADER = "EchelonedAssistant: Mover";
+BINDING_NAME_BIND1 = "Left";
+BINDING_NAME_BIND2 = "Right";
+BINDING_NAME_BIND3 = "Front"
+BINDING_NAME_BIND4 = "Back"
+BINDING_NAME_BIND5 = "Up"
+BINDING_NAME_BIND6 = "Down"
+BINDING_NAME_BIND7 = "Spawn Toggle"
+BINDING_NAME_BIND8 = "Get Object ID"
+BINDING_NAME_BIND9 = "Single Spawn"
+BINDING_NAME_BIND10 = "Single Spawn W/O Port"
+BINDING_NAME_BIND11 = "Custom Move"
+
+
+
+function EchelonedAssistant:OnEnable()
+    self:RegisterEvent("CHAT_MSG_SYSTEM") 
+    self:RegisterEvent("PLAYER_DEAD")
+    ObjectMTxt:Insert("180035")
+    ObjectWTxt:Insert("0.5")
+    ObjectHTxt:Insert("0.5")
+    ObjectLTxt:Insert("12")
+    SaveSpawn:SetChecked(true)
+    XDirTxt:Insert("0")
+    YDirTxt:Insert("0")
+    ZDirTxt:Insert("0")
+end
+
+function EchelonedAssistant:OnDisable()
+    -- Called when the addon is disabled
+end
+
+
+function EchelonedAssistant:ToggleAddon()
 	if addonopen then
 		FullForm:Hide();
 		MinipForm:Hide();
 		MiniForm:Hide();
-        PhaseForm:Hide();
-        ChatForm:Hide();
+		PhaseForm:Hide();
 		ItemForm:Hide();
-        RoleplayForm:Hide();
+		RoleplayForm:Hide();
 		ObjectForm:Hide();
 		TitleForm:Hide();
 		TicketTracker:Hide();
@@ -48,18 +90,186 @@ function ToggleAddon()
 		OverridesForm:Hide();
 		ModifyForm:Hide();
 		QuickItemForm:Hide();
-        QuickItemForm2:Hide();
+		QuickItemForm2:Hide();
 		QuestForm:Hide();
 		QuickPortalForm:Hide();
 		PSound("INTERFACESOUND_CHARWINDOWCLOSE");
 		addonopen = false;
 	else
-		OpenMain();
+		EchelonedAssistant:OpenMain();
 		PSound("INTERFACESOUND_CHARWINDOWOPEN");
 		addonopen = true;
 	end
 end
 
+
+--Handles the main window open
+function EchelonedAssistant:OpenMain()
+	if(gmhview == 2) then
+		MinipForm:Show();
+	elseif(gmhview == 3) then
+		MiniForm:Show();
+	else
+		FullForm:Show();
+	end
+end
+
+--Duplicated for library use
+function OpenMain()
+	if(gmhview == 2) then
+		MinipForm:Show();
+	elseif(gmhview == 3) then
+		MiniForm:Show();
+	else
+		FullForm:Show();
+	end
+end
+
+--Used for the slash command
+function EchelonedAssistant:Objectshow()
+    ObjectForm:Show()
+end
+
+function BanFormToggle()
+    if banshow then
+        BanForm:Hide();
+        banshow = false    
+    else
+        BanForm:Show();
+        banshow = true
+    end
+end
+
+function TeleFormToggle()
+    if teleshow then
+        TeleForm:Hide();
+        teleshow = false
+    else
+        TeleForm:Show();
+        teleshow = true
+    end
+end
+
+function TitleFormToggle()
+    if titleshow then
+        TitleForm:Hide();
+        titleshow = false
+    else
+        TitleForm:Show();
+        titleshow = true
+    end
+end
+
+function ObjectFormToggle()
+    if objectshow then
+        ObjectForm:Hide();
+        objectshow = false
+    else
+        ObjectForm:Show();
+        objectshow = true
+    end
+end
+
+function PhaseFormToggle()
+    if phaseshow then
+        PhaseForm:Hide();
+        phaseshow = false
+    else
+        PhaseForm:Show();
+        phaseshow = true
+    end
+end
+
+function ItemFormToggle()
+    if itemshow then
+        ItemForm:Hide();
+        itemshow = false
+    else
+        ItemForm:Show();
+        itemshow = true
+    end
+end
+
+function ModifyFormToggle()
+    if modshow then
+        ModifyForm:Hide();
+        modshow = false
+    else
+        ModifyForm:Show();
+        modshow = true
+    end
+end
+
+function OverridesFormToggle()
+    if cheatshow then
+        OverridesForm:Hide()
+        cheatshow = false
+    else 
+        OverridesForm:Show()
+        cheatshow = true
+    end
+end
+
+function RoleplayFormToggle()
+    if roshow then
+        RoleplayForm:Hide();
+        roshow = false
+    else
+        RoleplayForm:Show();
+        roshow = true
+    end
+end
+
+function PlayerFormToggle()
+    if pshow then
+        PlayerForm:Hide();
+        pshow = false
+    else
+        PlayerForm:Show();
+        pshow = true
+    end
+end
+
+function SpellFormToggle()
+    if spellshow then
+        SpellForm:Hide();
+        spellshow = false
+    else
+        SpellForm:Show();
+        spellshow = true
+    end
+end
+
+function SkillFormToggle()
+    if skillshow then
+        SkillForm:Hide();
+        skillshow = false
+    else
+        SkillForm:Show();
+        skillshow = true
+    end
+end
+
+function NPCFormToggle()
+    if npcshow then
+        NPCForm:Hide();
+        npcshow = false
+    else 
+        NPCForm:Show();
+        npcshow = true
+    end
+end
+
+function QuestFormToggle()
+    if qshow then
+        QuestForm:Hide();
+        qshow = false
+    else
+        QuestForm:Show();
+        qshow = true
+    end
+end
+    
 function outSAY(text, BoolChat)
 local sendto = "GUILD";
 	if BoolChat then
@@ -69,23 +279,14 @@ local sendto = "GUILD";
 	end
 end
 
-function GMHelperOnLoad(self)
-	self:RegisterForDrag("RightButton");
-end
-
 function PSound(sound)
 	PlaySound(sound);
 end
 
 function GMH_EmptyField()
-	ShowMessage("Please complete the required fields!");
+	print("Please complete the required fields!");
 end
 
--- Binding Variables
-BINDING_HEADER_GMHelper = "Echeloned Assistant";
-BINDING_NAME_ToggleAddon = "Toggles Echeloned Assistant";
-BINDING_HEADER_Chatbox = "Chatbox";
-BINDING_NAME_ToggleChatbox = "toggle Chatbox";
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Ban Script
 function BanAccount()
@@ -120,14 +321,6 @@ function DiscPlayer()
 	outSAY("killbyplayer "..CharName:GetText().." "..BanReason:GetText());
 end
 
-function ParPlayer()
-	outSAY("paralyze "..CharName:GetText());
-end
-
-function UnParPlayer()
-	outSAY("unparalyze "..CharName:GetText());
-end
-
 function PInfo()
 	outSAY("playerinfo "..CharName:GetText());
 end
@@ -141,7 +334,7 @@ end
 -- RoleplayScript
 
 function RoleplayAdd()
-    outSAY("roleplay addself "..RoleplayType:GetText());
+    outSAY("roleplay addselftolist "..RoleplayType:GetText());
 end
 
 function RoleplayRemove()
@@ -157,7 +350,7 @@ function RoleplayListRo()
 end
 
 function CreateRoleplay()
-    outSAY("roleplay create "..RoleplayCreatebox:GetText());
+    outSAY("roleplay createroleplay "..RoleplayCreatebox:GetText());
 end
 
 function RoleplayDelete()
@@ -193,10 +386,7 @@ end
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 -- AnnounceScript
-function Announce()
-    outSAY("announce "..AnnounceChatbox:GetText());
- end
- 
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- ItemScript
 function RemoveItem()
@@ -249,7 +439,8 @@ function CastAll()
 end
 
 function Whisper()
-    outSAY("whisper "..WhisperNameBox:GetText().." "..WhisperBox:GetText());
+    outSAY('whisper "'..WhisperNameBox:GetText()..'" '..WhisperBox:GetText());
+
 end
     
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -366,7 +557,7 @@ function PlaceObject()
 end
 
 function PlaceObjectTrue()
-	if NoSaveCheck:GetChecked() then a = "" else a = "1" end
+	if SaveSpawn:GetChecked() then a = "1" else a = "" end
 	outSAY("go spawn "..ObjectNumber:GetText().." "..a);
 end
 
@@ -518,14 +709,6 @@ function PhaseWeather()
     outSAY("phase setweather "..PhaseOwnerChatbox:GetText());
 end
 
-function PhaseToggleFlight()
-    outSAY("phase toggle flight");
-end
-
-function PhaseToggleCheats()
-    outSAY("phase toggle cheats");
-end
-
 function PhasePlaySound()
     outSAY("phase playsound "..PhaseOwnerChatbox:GetText());
 end
@@ -534,21 +717,27 @@ function PhaseAnn()
     outSAY("phase announce "..PhaseOwnerChatbox:GetText());
 end
 
-function PhaseToggleCustom()
-    outSAY("phase toggle custom");
-end
-
 function PhaseSetStarting()
     outSAY("phase setstarting");
 end
 
-function PhaseToggleSanc()
-    outSAY("phase toggle sanc");
-end
 
-function Phasetogglespells()
-    outSAY("phase toggle restr");
+function PhaseToggles()
+local selection = UIDropDownMenu_GetText(PhaseTogglebox)
+    if selection == "Sanctuary" then
+        toggle = "sanc"
+    elseif selection == "Custom Items" then
+        toggle = "custom"
+    elseif selection == "Kill Command" then
+        toggle = "murder"
+    elseif selection == "Cheats" then
+        toggle = "cheat"
+    elseif selection == "Flight" then
+        toggle = "flight"
+    end
+    outSAY("phase toggle "..toggle);
 end
+    
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --QuestScript
@@ -1011,47 +1200,6 @@ function DeathKnightT8()
     outSAY("add 192247");
 end
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
--- QuickPortalScript
-function QPStormwind()
-	outSAY("go spawn 176296 1");
-end
-
-function QPIronforge()
-	outSAY("go spawn 176497 1");
-end
-
-function QPDarnassus()
-	outSAY("go spawn 176498 1");
-end
-
-function QPExodar()
-	outSAY("go spawn 182351 1");
-end
-
-function QPOrgrimmar()
-	outSAY("go spawn 176499 1");
-end
-
-function QPUndercity()
-	outSAY("go spawn 176501 1");
-end
-
-function QPThunderbluff()
-	outSAY("go spawn 176500 1");
-end
-
-function QPSilvermoon()
-	outSAY("go spawn 182352 1");
-end
-
-function QPShattrath()
-	outSAY("go spawn 183384 1");
-end
-
-function QPDalaran()
-	outSAY("go spawn 191164 1");
-end
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- SkillScript
 function LookupSkill()
 	outSAY("lookup skill "..SkillNumber:GetText());
@@ -1141,7 +1289,12 @@ function DelPort()
 end
 
 function GPSBuild()
-    outSAY("gps "..XCord2:GetText().." "..YCord2:GetText().." "..ZCord2:GetText().." "..OrientationBox2:GetText());
+    outSAY("gps "..X:GetText().." "..YCord2:GetText().." "..ZCord2:GetText().." "..OrientationBox2:GetText());
+end
+
+function Deletego()
+    outSAY("go sel");
+    outSAY("go del");
 end
 
 function PortPlayer()
@@ -1197,188 +1350,8 @@ local selection = UIDropDownMenu_GetText(WepskComboBox)
 	end
 	outSAY("learnsk "..wepsk.." "..WeaponSkillLvl:GetText());
 end
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-function GMH_Main(msg)
-msg = string.lower(msg)
-if msg == "show" or msg == "hide" then
-	ToggleAddon()
-else
-	GMH_MainMsg("/gmh - displays this menu");
-	GMH_MainMsg("/gmh (show or hide) - Shows or Hides GMH");
-	GMH_MainMsg("/gm (on or off) - Toggles GM");
-	GMH_MainMsg("/revive - revives yourself");
-	GMH_MainMsg("/recallport or /recall or /port - Ports yourself to location");
-	GMH_MainMsg("/npcspawn - spawns NPC - e.g. /npcspawn 1");
-	GMH_MainMsg("/npcdelete - deleted targeted NPC");
-	GMH_MainMsg("/additem - adds item to you or target - e.g. /additem 1");
-	GMH_MainMsg("/announce or /an - broadcasts message to server in chatbox");
-	GMH_MainMsg("/wannounce or /wan - broadcasts message to server on the screen");
-	GMH_MainMsg("/gmannounce or /gman - broadcasts message to other GMs in chatbox");
-	GMH_MainMsg("/savedannounce or /sa - broadcasts saved message");
-	GMH_MainMsg("/showsavedannounce, /showsaved, or /ssa - Shows you Saved Announcement");
-	GMH_MainMsg("/advanceall or /advanceallskills - Advances all of your or your target's skills by X.");
-	GMH_MainMsg("/revive - revives yourself");
-	GMH_MainMsg("/reviveplr - revives plr x");
-	GMH_MainMsg("/learn - learns spells to you or targeted player - e.g. /learn all - Learns all spells for your class");
-	GMH_MainMsg("/unlearn - unlearns spell id on you or targeted player - e.g. /unlearn 1");
-	GMH_MainMsg("/achievecomplete - Completes achievement on targeted player - e.g. /achievecomplete 1");
-	GMH_MainMsg("/lookup - Looks up term under specified subject - e.g. /lookup item Gamemaster");
-	GMH_MainMsg("/kickplayer - Kicks specified player with or without reason. - e.g. /kickplayer Name Reason");
-end
-end
-
-function GMH_MainMsg(msg)
-	ShowMessage(msg, "00FF00");
-end
-
-function GMH_GMToggle(msg)
-msg = string.lower(msg)
-	if msg == "on" or msg == "off" then
-		outSAY("gm "..msg);
-	else
-		ShowMessage("Available options: on or off");
-	end
-end
-
-function GMH_Revive()
-	outSAY("revive");
-end
-
-function GMH_NPCSpawn(msg)
-	outSAY("npc spawn "..msg);
-end
-
-function GMH_NPCDelete()
-	outSAY("npc delete");
-end
-
-function GMH_AddItem(msg)
-	outSAY("additem "..msg);
-end
-
-function GMH_Announce(msg)
-	outSAY("announce "..msg);
-end
-
-function GMH_RecallPort(msg)
-	outSAY("recall port "..msg);
-end
-
-function GMH_Learn(msg)
-	outSAY("learn "..msg);
-end
-
-function GMH_UnLearn(msg)
-	outSAY("unlearn "..msg);
-end
-
-function GMH_Revive(msg)
-	outSAY("revive");
-end
-
-function GMH_RevivePlr(msg)
-	outSAY("reviveplr "..msg);
-end
-
-function GMH_AdvanceAllSkills(msg)
-	outSAY("advanceallskills "..msg);
-end
-
-function GMH_Lookup(msg)
-args = {strsplit(" ",msg)};
-if args[2] then
-outSAY("lookup "..args[1].." "..args[2]);
-else
-ShowMessage("Please enter a search term.");
-end
-end
-
-function GMH_Kick(msg)
-args = {strsplit(" ",msg)};
-if args[2] then a2 = string.sub(msg,string.len(args[1])+2) else a2 = "" end
-outSAY("kickplayer "..args[1].." "..a2);
-end
-
---Plays sound files named in the DBC
-function GMH_Sounds(msg)
-	PSound(msg);
-end
-
-function GMH_TableReload(msg)
-	outSAY("reload "..msg);
-end
-
-function GMH_ShowMessage(msg)
-ShowMessage(msg, "FFFFFF")
-end
-
-if select(4, GetBuildInfo()) == 30100 then
-	SLASH_GMHRELOAD1 = "/reload"
-	SlashCmdList["GMHRELOAD"] = 
-	function()
-		ReloadUI()
-	end
-end
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-SlashCmdList["GMH"] = GMH_Main;
-SLASH_GMH1="/ewa";
-SlashCmdList["GMHGMTOGGLE"] = GMH_GMToggle;
-SLASH_GMHGMTOGGLE1="/gm";
-SlashCmdList["REVIVE"] = GMH_Revive;
-SLASH_REVIVE1="/revive";
-SlashCmdList["GMHSPAWN"] = GMH_NPCSpawn;
-SLASH_GMHSPAWN1="/npcspawn";
-SlashCmdList["GMHDELETE"] = GMH_NPCDelete;
-SLASH_GMHDELETE1="/npcdelete";
-SlashCmdList["GMHADDITEM"] = GMH_AddItem;
-SLASH_GMHADDITEM1="/additem";
-SlashCmdList["GMHANNOUNCE"] = GMH_Announce;
-SLASH_GMHANNOUNCE1="/announce";
-SLASH_GMHANNOUNCE2="/an";
-SlashCmdList["GMHGMANNOUNCE"] = GMH_GMAnnounce;
-SLASH_GMHGMANNOUNCE1="/gmannounce";
-SLASH_GMHGMANNOUNCE2="/gman";
-SlashCmdList["GMHRECALLPORT"] = GMH_RecallPort;
-SLASH_GMHRECALLPORT1="/recallport";
-SLASH_GMHRECALLPORT2="/recall";
-SLASH_GMHRECALLPORT3="/port";
-SlashCmdList["GMHSAVEDANNOUNCE"] = GMH_SavedAnnounce;
-SLASH_GMHSAVEDANNOUNCE1="/savedannounce";
-SLASH_GMHSAVEDANNOUNCE2="/sa";
-SlashCmdList["GMHSHOWSAVEDANNOUNCE"] = GMH_ShowSavedAnn;
-SLASH_GMHSHOWSAVEDANNOUNCE1="/showsavedannounce";
-SLASH_GMHSHOWSAVEDANNOUNCE2="/showsaved";
-SLASH_GMHSHOWSAVEDANNOUNCE3="/ssa";
-SlashCmdList["GMHLEARN"] = GMH_Learn;
-SLASH_GMHLEARN1="/learn";
-SlashCmdList["GMHUNLEARN"] = GMH_UnLearn;
-SLASH_GMHUNLEARN1="/unlearn";
-SlashCmdList["GMHREVIVE"] = GMH_Revive;
-SLASH_GMHREVIVE1="/revive";
-SlashCmdList["GMHREVIVEPLR"] = GMH_RevivePlr;
-SLASH_GMHREVIVEPLR1="/reviveplr";
-SlashCmdList["GMHADVANCEALL"] = GMH_AdvanceAllSkills;
-SLASH_GMHADVANCEALL1="/advanceall";
-SLASH_GMHADVANCEALL2="/advanceallskills";
-SlashCmdList["GMHACHIEVECOMPLETE"] = GMH_AchievementComplete;
-SLASH_GMHACHIEVECOMPLETE1="/achievecomplete";
-SlashCmdList["GMHLOOKUP"] = GMH_Lookup;
-SLASH_GMHLOOKUP1="/lookup";
-SlashCmdList["GMHKICK"] = GMH_Kick;
-SLASH_GMHKICK1="/kickplayer";
-SlashCmdList["GMHSOUND"] = GMH_Sounds;
-SLASH_GMHSOUND1="/ps";
-SlashCmdList["GMHTR"] = GMH_TableReload;
-SLASH_GMHTR1="/tr";
-SLASH_GMHTR2="/table";
-SlashCmdList["GMHSHOWMESSAGE"] = GMH_ShowMessage;
-SLASH_GMHSHOWMESSAGE1="/showmessage";
-
-
----------------------------------------------
---		  End of Advance Command		 --
----------------------------------------------
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------
 -- ItemSearchScript
 ----------The following code is under development. Please disregard.
 -- Below vars are used throughout the item search
@@ -1508,4 +1481,230 @@ function VIEW_Defaults()
 VIEWGUIFrame_viewfull:SetChecked(true);
 VIEWGUIFrame_viewminip:SetChecked(false);
 VIEWGUIFrame_viewminil:SetChecked(false);
+end
+
+
+--the objectplay addition--
+
+
+-- Start of code for Object Mover
+
+local GPS = '.gps'
+local cWorking = 0
+local cMap = 0
+local cX = 0
+local cY = 0
+local cZ = 0
+local incX = 0
+local incY = 0
+local incZ = 0
+local fID = 0
+
+function EchelonedAssistant:PLAYER_DEAD()
+    --SendChatMessage(".revive", "CHANNEL", nil, 1);
+end
+
+function EchelonedAssistant:CHAT_MSG_SYSTEM()
+    if string.find(arg1,"Current Position") ~= nil then
+        if cWorking == 1 then
+            WorkString = string.gsub(arg1, '(|.........)', '') -- This removes any color formating
+            cMap = string.gsub(string.match(WorkString,'%s%d*%s')," ","")
+            t = {}
+            cnt = 1
+            for w in string.gmatch(WorkString,'%s.%d*%p%d%d') do
+                t[cnt] = string.gsub(w," ","")
+                cnt = cnt + 1
+            end
+            cX = t[1]
+            cY = t[2]
+            cZ = t[3]
+            cO = t[4]
+            --Calulate the new x y bassed on incX
+            nX = cX + (math.cos(cO) * incX)
+            nY = cY + (math.sin(cO) * incX)
+            --rotate the O so we can do some math
+            tD = math.deg(cO) + 90
+            if tD > 360 then tD = tD - 360 end
+            nO = math.rad(tD)
+            --Calulate the new x y bassed on incX
+            nX = nX + (math.cos(nO) * incY)
+            nY = nY + (math.sin(nO) * incY)
+            --Send the port
+            SendChatMessage('.worldport '..cMap..' '..nX..' '..nY..' '..(cZ+incZ)..' '..cO)
+            --console reloadui
+            incX = 0
+            incY = 0
+            incZ = 0
+            isChecked = CheckSpawn:GetChecked()
+            if isChecked == 1 then
+                isChecked2 = SaveSpawn:GetChecked()
+                ObjectN = ObjectNumber:GetText()
+                if isChecked2 == 1 then
+                    SendChatMessage('.go spawn '..ObjectN..' 1')
+                else
+                    SendChatMessage('.go spawn '..ObjectN)
+                end
+            end
+            cWorking = 0
+        end
+    end
+    if string.find(arg1,"selected gameobject") ~= nil then
+        if fID == 1 then
+            SendChatMessage('.go info')
+            fID = 2
+        end
+    end
+    if string.find(arg1,"Entry:") ~= nil then
+        if fID == 2 then
+            WorkString = string.gsub(arg1, '(|.........)', '')
+            WorkString = string.gsub(WorkString, 'Entry:', '')
+            ObjectNumber:SetText(WorkString)
+            fID = 3
+        end        
+    end
+    if string.find(arg1,"Model:") ~= nil then
+        if fID == 3 then
+            WorkString = string.gsub(arg1, '(|.........)', '')
+            WorkString = string.gsub(WorkString, 'Model:', '')
+            ObjectMTxt:SetText(WorkString)
+            fID = 0
+        end        
+    end
+    if string.find(arg1,"Model:") ~= nil then
+        WorkString = string.gsub(arg1, '(|.........)', '')
+        WorkString = string.match(WorkString, '%d*%d')
+        --ObjectPlay:LoadModel(WorkString)
+    end
+    if string.find(arg1,"You are not in range of any selectable objects") ~= nil then
+        if fID == 1 then
+            fID = 0
+        end        
+    end
+end
+
+function EchelonedAssistant:CheckToggle()
+    isChecked = CheckSpawn:GetChecked()
+    if isChecked == 1 then
+        CheckSpawn:SetChecked(false)
+    else
+        CheckSpawn:SetChecked(true)
+    end
+end
+
+function EchelonedAssistant:GetOID()
+    if fID == 0 then
+        fID = 1
+        SendChatMessage('.go select')
+    end
+end
+
+function EchelonedAssistant:DMUP()
+    if cWorking == 0 then
+        cWorking = 1
+        incZ = ObjectHTxt:GetText()
+        SendChatMessage(GPS)
+    end
+end
+
+function EchelonedAssistant:DMDown()
+    if cWorking == 0 then
+        cWorking = 1
+        incZ = 0 - ObjectHTxt:GetText()
+        SendChatMessage(GPS)
+    end
+end
+
+function EchelonedAssistant:DMLeft()
+    if cWorking == 0 then
+        cWorking = 1
+        incY = ObjectWTxt:GetText()
+        SendChatMessage(GPS)
+    end
+end
+
+function EchelonedAssistant:DMRight()
+    if cWorking == 0 then
+        cWorking = 1
+        incY = 0 - ObjectWTxt:GetText()
+        SendChatMessage(GPS)
+    end
+end
+
+function EchelonedAssistant:DMSS()
+    if cWorking == 0 then
+        cWorking = 1
+        SendChatMessage(GPS)
+    end
+end
+
+function EchelonedAssistant:DMSS2()
+    isChecked = SaveSpawn:GetChecked()
+    ObjectN = ObjectNumber:GetText()
+    if isChecked == 1 then
+        SendChatMessage('.go spawn '..ObjectN..' 1')
+    else
+        SendChatMessage('.go spawn '..ObjectN)
+    end
+end
+
+function EchelonedAssistant:DMFront()
+    if cWorking == 0 then
+        cWorking = 1
+        incX = ObjectLTxt:GetText()
+        SendChatMessage(GPS)
+    end
+end
+
+function EchelonedAssistant:DMBack()
+    if cWorking == 0 then
+        cWorking = 1
+        incX = 0 - ObjectLTxt:GetText()
+        SendChatMessage(GPS)
+    end
+end
+
+function EchelonedAssistant:CustomMove()
+    if cWorking == 0 then       
+        if XDirTxt:GetText() == '-' then
+            incX = 0 - ObjectLTxt:GetText()
+        elseif  XDirTxt:GetText() == '+' then
+            incX = ObjectLTxt:GetText()
+        else
+            incX = 0
+        end
+        if YDirTxt:GetText() == '-' then
+            incY = 0 - ObjectWTxt:GetText()
+        elseif  YDirTxt:GetText() == '+' then
+            incY = ObjectWTxt:GetText()
+        else
+            incY = 0
+        end
+        if ZDirTxt:GetText() == '-' then
+            incZ = 0 - ObjectHTxt:GetText()
+        elseif  ZDirTxt:GetText() == '+' then
+            incZ = ObjectHTxt:GetText()
+        else
+            incZ = 0
+        end
+        cWorking = 1
+        SendChatMessage(GPS)
+    end
+end
+
+-- code for Special items
+
+function EchelonedAssistant:SpellClick()
+    tM = ObjectMTxt:GetText();
+    if string.len(tM) == 0 then
+        print("Please input a Object Model")
+    else
+        tS = SpellIDTxt:GetText();
+        if string.len(tS) == 0 then
+            print("Please input a Spell Id")
+        else
+            tM = string.gsub(tM, '%s', '')
+            tS = string.gsub(tS, '%s', '')
+            SendChatMessage("#go "..tM.." 1 "..tS)
+        end
+    end    
 end

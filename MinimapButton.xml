@@ -14,7 +14,7 @@
 	</Anchors>
 	<Layers>
 		<Layer level="BACKGROUND">
-			<Texture name="$parent_Texture" file="Interface\CHATFRAME\UI-ChatIcon-Blizz">
+			<Texture name="$parent_Texture" file="Interface\Addons\EchelonedAssistant\art\echlogo.tga">
             	<Size>
 					<AbsDimension x="15" y="15"/>
 				</Size>
@@ -61,7 +61,7 @@
 				if self.dragme then GMHMinimap_BeingDragged(); end
 			</OnUpdate>
 			<OnClick>
-			ToggleAddon()
+                EchelonedAssistant:ToggleAddon()
 			</OnClick>
 			<OnEnter>
 				GMHMinimap_Show()

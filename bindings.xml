@@ -1,8 +1,65 @@
 ﻿<Bindings>
-  <Binding name="ToggleAddon" description="Hide/Show GM Helper" header="GMHelper">
-    ToggleAddon();
+  <Binding name="ToggleAddon" description="Hide/Show EchAssistant" header="EchelonedAssistant">
+    EchelonedAssistant:ToggleAddon();
   </Binding>
    <Binding name="ToggleChatbox" description="toggles Chatbox" header="Chatbox">
-    ToggleChatbox();
+     if ( keystate == "down" ) then
+      ToggleChatbox();
+      end
+  </Binding>
+  <Binding name="BIND1" description="Left" header="MYHEADER">
+    if ( keystate == "down" ) then
+      EchelonedAssistant:DMLeft();
+    end
+  </Binding>
+  <Binding name="BIND2" description="Right" runOnUp="true">
+    if ( keystate == "down" ) then
+      EchelonedAssistant:DMRight();
+    end
+  </Binding>
+  <Binding name="BIND3" description="Front" runOnUp="true">
+    if ( keystate == "down" ) then
+      EchelonedAssistant:DMFront();
+    end
+  </Binding>
+  <Binding name="BIND4" description="Back" runOnUp="true">
+    if ( keystate == "down" ) then
+      EchelonedAssistant:DMBack();
+    end
+  </Binding>
+  <Binding name="BIND5" description="Up" runOnUp="true">
+    if ( keystate == "down" ) then
+      EchelonedAssistant:DMUP();
+    end
+  </Binding>
+  <Binding name="BIND6" description="Down" runOnUp="true">
+    if ( keystate == "down" ) then
+      EchelonedAssistant:DMDown();
+    end
+  </Binding>
+  <Binding name="BIND9" description="SingleSpawn" runOnUp="true">
+    if ( keystate == "down" ) then
+      EchelonedAssistant:DMSS();
+    end
+  </Binding>
+    <Binding name="BIND10" description="SingleSpawn" runOnUp="true">
+    if ( keystate == "down" ) then
+      EchelonedAssistant:DMSS2();
+    end
+  </Binding>
+  <Binding name="BIND11" description="CustomMove" runOnUp="true">
+    if ( keystate == "down" ) then
+      EchelonedAssistant:CustomMove();
+    end
+  </Binding>
+  <Binding name="BIND7" description="SpawnToggle" runOnUp="true">
+    if ( keystate == "down" ) then
+      EchelonedAssistant:CheckToggle();
+    end
+  </Binding>
+  <Binding name="BIND8" description="GetObjectID" runOnUp="true">
+    if ( keystate == "down" ) then
+      EchelonedAssistant:GetOID();
+    end
   </Binding>
 </Bindings>

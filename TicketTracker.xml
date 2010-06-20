@@ -1405,7 +1405,7 @@
       </Frame>
     </Frames>
     <Scripts>
-      <OnLoad>GMHelperOnLoad(self);
+      <OnLoad>self:RegisterForDrag("RightButton");
 </OnLoad>
       <OnEvent>TT_Setup(event,...);
 </OnEvent>

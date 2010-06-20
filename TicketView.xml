@@ -384,7 +384,7 @@ PlaySound("PVPENTERQUEUE");
       </Button>
     </Frames>
     <Scripts>
-      <OnLoad>GMHelperOnLoad(self)
+      <OnLoad>self:RegisterForDrag("RightButton");
 </OnLoad>
 	<OnHide>
 	if TT_Name then

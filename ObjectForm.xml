@@ -3,7 +3,7 @@
   <Frame name="ObjectForm" hidden="true" parent="UIParent" movable="true" resizable="true" enableKeyboard="true" clampedToScreen="true">
     <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508883-59c2-4f83-ae10-27aaad48391b" />-->
     <Size>
-      <AbsDimension x="543" y="219" />
+      <AbsDimension x="513" y="225" />
     </Size>
     <Anchors>
       <Anchor point="TOP" relativeTo="UIParent">
@@ -12,7 +12,7 @@
         </Offset>
       </Anchor>
     </Anchors>
-    <Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+    <Backdrop bgFile="Interface\Addons\EchelonedAssistant\art\backdrop.tga" tile="false">
       <BackgroundInsets>
         <AbsInset left="11" right="12" top="12" bottom="11" />
       </BackgroundInsets>
@@ -25,14 +25,14 @@
     </Backdrop>
     <Layers>
       <Layer>
-        <Texture name="$parentTitleBorder" file="Interface\DialogFrame\UI-DialogBox-Header">
+        <Texture name="$parentTitleBorder" file="ENVIRONMENTS\STARS\AUCHINDOUN_VORTEXCLOUD01.blp">
           <Size>
             <AbsDimension x="160" y="32" />
           </Size>
           <Anchors>
             <Anchor point="TOP">
               <Offset>
-                <AbsDimension x="0" y="5" />
+                <AbsDimension x="0" y="10" />
               </Offset>
             </Anchor>
           </Anchors>
@@ -63,32 +63,248 @@
       </Layer>
     </Layers>
     <Frames>
-      <Button name="$parentButton7" text="GPS (no build)">
-        <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508884-59c2-4f83-ae10-27aaad48391b" />-->
+      <Button name="quickbutton" text="Quick Objects">
+        <!--<FrameSkin skinid="f15d4970-d66d-444e-bb2d-1ad102c87fed" frameid="f15d4973-d66d-444e-bb2d-1ad102c87fed" />-->
         <Size>
-          <AbsDimension x="68" y="38" />
+          <AbsDimension x="100" y="22" />
         </Size>
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="381" y="-111" />
+              <AbsDimension x="199" y="-23" />
             </Offset>
           </Anchor>
         </Anchors>
         <Scripts>
-          <OnClick>GPSBuild()
+          <OnClick>QuickPortalForm:Show();
 </OnClick>
         </Scripts>
-        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </NormalTexture>
-        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </PushedTexture>
-        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </DisabledTexture>
-        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </HighlightTexture>
+        <ButtonText>
+          <FontHeight>
+            <AbsValue val="10" />
+          </FontHeight>
+        </ButtonText>
+        <NormalFont style="GameFontNormal" />
+        <HighlightFont style="GameFontHighlight" />
+        <DisabledFont style="GameFontDisable" />
+        <NormalColor r="0" g="0.8039216" b="0.8196079" />
+        <PushedTextOffset x="0" y="0" />
+      </Button>
+      <Frame name="$parentLabel3">
+        <!--<FrameSkin skinid="f15d4970-d66d-444e-bb2d-1ad102c87fed" frameid="f15d4978-d66d-444e-bb2d-1ad102c87fed" />-->
+        <Size>
+          <AbsDimension x="105" y="17" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="352" y="-123" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Layers>
+          <Layer>
+            <FontString name="$parentLabel" setAllPoints="true" font="Fonts\FRIZQT__.TTF" text="Spawn on Move">
+              <FontHeight>
+                <AbsValue val="12" />
+              </FontHeight>
+              <Color r="0" g="0.8039216" b="0.8196079" />
+              <Shadow>
+                <Color r="0" g="0" b="0" />
+                <Offset>
+                  <AbsDimension x="1" y="-1" />
+                </Offset>
+              </Shadow>
+            </FontString>
+          </Layer>
+        </Layers>
+      </Frame>
+      <CheckButton name="CheckSpawn">
+        <!--<FrameSkin skinid="f15d4970-d66d-444e-bb2d-1ad102c87fed" frameid="f15d4974-d66d-444e-bb2d-1ad102c87fed" />-->
+        <Size>
+          <AbsDimension x="22" y="21" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="324" y="-121" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-CheckBox-Up" />
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-CheckBox-Down" />
+        <DisabledTexture />
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-CheckBox-Highlight" alphaMode="ADD" />
+        <PushedTextOffset x="0" y="0" />
+        <CheckedTexture file="Interface\Buttons\UI-CheckBox-Check" />
+        <DisabledCheckedTexture file="Interface\Addons\EchelonedAssistant\art\UI-CheckBox-Check-Disabled" />
+      </CheckButton>
+      <EditBox name="ZDirTxt" autoFocus="false">
+        <!--<FrameSkin skinid="f15d4970-d66d-444e-bb2d-1ad102c87fed" frameid="f15d4975-d66d-444e-bb2d-1ad102c87fed" />-->
+        <Size>
+          <AbsDimension x="100" y="18" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="55" y="-145" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Backdrop bgFile="Interface\TutorialFrame\TutorialFrameBackground" edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
+          <BackgroundInsets>
+            <AbsInset left="3" right="5" top="3" bottom="5" />
+          </BackgroundInsets>
+          <TileSize>
+            <AbsValue val="16" />
+          </TileSize>
+          <EdgeSize>
+            <AbsValue val="16" />
+          </EdgeSize>
+          <BorderColor r="0.8627451" g="0.07843138" b="0.2313726" />
+        </Backdrop>
+        <Scripts>
+          <OnEscapePressed>self:ClearFocus(self);</OnEscapePressed>
+        </Scripts>
+        <FontString font="Fonts\ARIALN.TTF">
+          <FontHeight>
+            <AbsValue val="14" />
+          </FontHeight>
+          <Color r="1" g="1" b="1" />
+          <Shadow>
+            <Color r="0" g="0" b="0" />
+            <Offset>
+              <AbsDimension x="1" y="-1" />
+            </Offset>
+          </Shadow>
+        </FontString>
+        <HighlightColor r="1" g="1" b="1" />
+        <TextInsets>
+          <AbsInset left="0" right="0" top="0" bottom="0" />
+        </TextInsets>
+      </EditBox>
+      <EditBox name="YDirTxt" autoFocus="false">
+        <!--<FrameSkin skinid="f15d4970-d66d-444e-bb2d-1ad102c87fed" frameid="f15d4975-d66d-444e-bb2d-1ad102c87fed" />-->
+        <Size>
+          <AbsDimension x="100" y="18" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="55" y="-121" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Backdrop bgFile="Interface\TutorialFrame\TutorialFrameBackground" edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
+          <BackgroundInsets>
+            <AbsInset left="3" right="5" top="3" bottom="5" />
+          </BackgroundInsets>
+          <TileSize>
+            <AbsValue val="16" />
+          </TileSize>
+          <EdgeSize>
+            <AbsValue val="16" />
+          </EdgeSize>
+          <BorderColor r="0.8627451" g="0.07843138" b="0.2313726" />
+        </Backdrop>
+        <Scripts>
+          <OnEscapePressed>self:ClearFocus(self);</OnEscapePressed>
+        </Scripts>
+        <FontString font="Fonts\ARIALN.TTF">
+          <FontHeight>
+            <AbsValue val="14" />
+          </FontHeight>
+          <Color r="1" g="1" b="1" />
+          <Shadow>
+            <Color r="0" g="0" b="0" />
+            <Offset>
+              <AbsDimension x="1" y="-1" />
+            </Offset>
+          </Shadow>
+        </FontString>
+        <HighlightColor r="1" g="1" b="1" />
+        <TextInsets>
+          <AbsInset left="0" right="0" top="0" bottom="0" />
+        </TextInsets>
+      </EditBox>
+      <EditBox name="XDirTxt" autoFocus="false">
+        <!--<FrameSkin skinid="f15d4970-d66d-444e-bb2d-1ad102c87fed" frameid="f15d4975-d66d-444e-bb2d-1ad102c87fed" />-->
+        <Size>
+          <AbsDimension x="100" y="18" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="55" y="-97" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Backdrop bgFile="Interface\TutorialFrame\TutorialFrameBackground" edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
+          <BackgroundInsets>
+            <AbsInset left="3" right="5" top="3" bottom="5" />
+          </BackgroundInsets>
+          <TileSize>
+            <AbsValue val="16" />
+          </TileSize>
+          <EdgeSize>
+            <AbsValue val="16" />
+          </EdgeSize>
+          <BorderColor r="0.8627451" g="0.07843138" b="0.2313726" />
+        </Backdrop>
+        <Scripts>
+          <OnEscapePressed>self:ClearFocus(self);</OnEscapePressed>
+        </Scripts>
+        <FontString font="Fonts\ARIALN.TTF">
+          <FontHeight>
+            <AbsValue val="14" />
+          </FontHeight>
+          <Color r="1" g="1" b="1" />
+          <Shadow>
+            <Color r="0" g="0" b="0" />
+            <Offset>
+              <AbsDimension x="1" y="-1" />
+            </Offset>
+          </Shadow>
+        </FontString>
+        <HighlightColor r="1" g="1" b="1" />
+        <TextInsets>
+          <AbsInset left="0" right="0" top="0" bottom="0" />
+        </TextInsets>
+      </EditBox>
+      <Button name="$parentButton2" text="Custom Move">
+        <!--<FrameSkin skinid="f15d4970-d66d-444e-bb2d-1ad102c87fed" frameid="f15d4973-d66d-444e-bb2d-1ad102c87fed" />-->
+        <Size>
+          <AbsDimension x="100" y="22" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="55" y="-169" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </NormalTexture>
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </PushedTexture>
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </DisabledTexture>
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </HighlightTexture>
         <ButtonText name="$parentText">
@@ -99,67 +315,370 @@
         <NormalFont style="GameFontNormal" />
         <HighlightFont style="GameFontHighlight" />
         <DisabledFont style="GameFontDisable" />
+        <PushedTextOffset x="0" y="0" />
       </Button>
+      <Frame name="$parentLabel7">
+        <!--<FrameSkin skinid="f15d4970-d66d-444e-bb2d-1ad102c87fed" frameid="f15d4978-d66d-444e-bb2d-1ad102c87fed" />-->
+        <Size>
+          <AbsDimension x="51" y="17" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="324" y="-71" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Layers>
+          <Layer>
+            <FontString name="$parentLabel" setAllPoints="true" font="Fonts\FRIZQT__.TTF" text="Length">
+              <FontHeight>
+                <AbsValue val="12" />
+              </FontHeight>
+              <Color r="1" g="0.8196079" b="0" />
+              <Shadow>
+                <Color r="0" g="0" b="0" />
+                <Offset>
+                  <AbsDimension x="1" y="-1" />
+                </Offset>
+              </Shadow>
+            </FontString>
+          </Layer>
+        </Layers>
+      </Frame>
+      <Frame name="$parentLabel6">
+        <!--<FrameSkin skinid="f15d4970-d66d-444e-bb2d-1ad102c87fed" frameid="f15d4978-d66d-444e-bb2d-1ad102c87fed" />-->
+        <Size>
+          <AbsDimension x="51" y="17" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="324" y="-45" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Layers>
+          <Layer>
+            <FontString name="$parentLabel" setAllPoints="true" font="Fonts\FRIZQT__.TTF" text="Width">
+              <FontHeight>
+                <AbsValue val="12" />
+              </FontHeight>
+              <Color r="1" g="0.8196079" b="0" />
+              <Shadow>
+                <Color r="0" g="0" b="0" />
+                <Offset>
+                  <AbsDimension x="1" y="-1" />
+                </Offset>
+              </Shadow>
+            </FontString>
+          </Layer>
+        </Layers>
+      </Frame>
+      <Frame name="$parentLabel5">
+        <!--<FrameSkin skinid="f15d4970-d66d-444e-bb2d-1ad102c87fed" frameid="f15d4978-d66d-444e-bb2d-1ad102c87fed" />-->
+        <Size>
+          <AbsDimension x="51" y="17" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="324" y="-97" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Layers>
+          <Layer>
+            <FontString name="$parentLabel" setAllPoints="true" font="Fonts\FRIZQT__.TTF" text="Height">
+              <FontHeight>
+                <AbsValue val="12" />
+              </FontHeight>
+              <Color r="1" g="0.8196079" b="0" />
+              <Shadow>
+                <Color r="0" g="0" b="0" />
+                <Offset>
+                  <AbsDimension x="1" y="-1" />
+                </Offset>
+              </Shadow>
+            </FontString>
+          </Layer>
+        </Layers>
+      </Frame>
       <Frame name="$parentLabel4">
-        <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508885-59c2-4f83-ae10-27aaad48391b" />-->
+        <!--<FrameSkin skinid="f15d4970-d66d-444e-bb2d-1ad102c87fed" frameid="f15d4978-d66d-444e-bb2d-1ad102c87fed" />-->
+        <Size>
+          <AbsDimension x="51" y="20" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="324" y="-19" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Layers>
+          <Layer>
+            <FontString name="$parentLabel" setAllPoints="true" font="Fonts\FRIZQT__.TTF" text="Model">
+              <FontHeight>
+                <AbsValue val="12" />
+              </FontHeight>
+              <Color r="1" g="0.8196079" b="0" />
+              <Shadow>
+                <Color r="0" g="0" b="0" />
+                <Offset>
+                  <AbsDimension x="1" y="-1" />
+                </Offset>
+              </Shadow>
+            </FontString>
+          </Layer>
+        </Layers>
+      </Frame>
+      <EditBox name="ObjectNumber" autoFocus="false">
+        <!--<FrameSkin skinid="f15d4970-d66d-444e-bb2d-1ad102c87fed" frameid="f15d4975-d66d-444e-bb2d-1ad102c87fed" />-->
+        <Size>
+          <AbsDimension x="113" y="20" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="85" y="-23" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Backdrop bgFile="Interface\TutorialFrame\TutorialFrameBackground" edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
+          <BackgroundInsets>
+            <AbsInset left="3" right="5" top="3" bottom="5" />
+          </BackgroundInsets>
+          <TileSize>
+            <AbsValue val="16" />
+          </TileSize>
+          <EdgeSize>
+            <AbsValue val="16" />
+          </EdgeSize>
+          <BorderColor r="0.8627451" g="0.07843138" b="0.2313726" />
+        </Backdrop>
+        <Scripts>
+          <OnEscapePressed>self:ClearFocus(self);</OnEscapePressed>
+        </Scripts>
+        <FontString font="Fonts\ARIALN.TTF">
+          <FontHeight>
+            <AbsValue val="14" />
+          </FontHeight>
+          <Color r="1" g="1" b="1" />
+          <Shadow>
+            <Color r="0" g="0" b="0" />
+            <Offset>
+              <AbsDimension x="1" y="-1" />
+            </Offset>
+          </Shadow>
+        </FontString>
+        <HighlightColor r="1" g="1" b="1" />
+        <TextInsets>
+          <AbsInset left="0" right="0" top="0" bottom="0" />
+        </TextInsets>
+      </EditBox>
+      <EditBox name="ObjectWTxt" autoFocus="false">
+        <!--<FrameSkin skinid="f15d4970-d66d-444e-bb2d-1ad102c87fed" frameid="f15d4975-d66d-444e-bb2d-1ad102c87fed" />-->
+        <Size>
+          <AbsDimension x="100" y="20" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="381" y="-45" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Backdrop bgFile="Interface\TutorialFrame\TutorialFrameBackground" edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
+          <BackgroundInsets>
+            <AbsInset left="3" right="5" top="3" bottom="5" />
+          </BackgroundInsets>
+          <TileSize>
+            <AbsValue val="16" />
+          </TileSize>
+          <EdgeSize>
+            <AbsValue val="16" />
+          </EdgeSize>
+          <BorderColor r="0.8627451" g="0.07843138" b="0.2313726" />
+        </Backdrop>
+        <Scripts>
+          <OnEscapePressed>self:ClearFocus(self);</OnEscapePressed>
+        </Scripts>
+        <FontString font="Fonts\ARIALN.TTF">
+          <FontHeight>
+            <AbsValue val="14" />
+          </FontHeight>
+          <Color r="1" g="1" b="1" />
+          <Shadow>
+            <Color r="0" g="0" b="0" />
+            <Offset>
+              <AbsDimension x="1" y="-1" />
+            </Offset>
+          </Shadow>
+        </FontString>
+        <HighlightColor r="1" g="1" b="1" />
+        <TextInsets>
+          <AbsInset left="0" right="0" top="0" bottom="0" />
+        </TextInsets>
+      </EditBox>
+      <EditBox name="ObjectLTxt" autoFocus="false">
+        <!--<FrameSkin skinid="f15d4970-d66d-444e-bb2d-1ad102c87fed" frameid="f15d4975-d66d-444e-bb2d-1ad102c87fed" />-->
+        <Size>
+          <AbsDimension x="100" y="20" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="381" y="-71" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Backdrop bgFile="Interface\TutorialFrame\TutorialFrameBackground" edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
+          <BackgroundInsets>
+            <AbsInset left="3" right="5" top="3" bottom="5" />
+          </BackgroundInsets>
+          <TileSize>
+            <AbsValue val="16" />
+          </TileSize>
+          <EdgeSize>
+            <AbsValue val="16" />
+          </EdgeSize>
+          <BorderColor r="0.8627451" g="0.07843138" b="0.2313726" />
+        </Backdrop>
+        <Scripts>
+          <OnEscapePressed>self:ClearFocus(self);</OnEscapePressed>
+        </Scripts>
+        <FontString font="Fonts\ARIALN.TTF">
+          <FontHeight>
+            <AbsValue val="14" />
+          </FontHeight>
+          <Color r="1" g="1" b="1" />
+          <Shadow>
+            <Color r="0" g="0" b="0" />
+            <Offset>
+              <AbsDimension x="1" y="-1" />
+            </Offset>
+          </Shadow>
+        </FontString>
+        <HighlightColor r="1" g="1" b="1" />
+        <TextInsets>
+          <AbsInset left="0" right="0" top="0" bottom="0" />
+        </TextInsets>
+      </EditBox>
+      <EditBox name="ObjectHTxt" autoFocus="false">
+        <!--<FrameSkin skinid="f15d4970-d66d-444e-bb2d-1ad102c87fed" frameid="f15d4975-d66d-444e-bb2d-1ad102c87fed" />-->
+        <Size>
+          <AbsDimension x="100" y="20" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="381" y="-97" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Backdrop bgFile="Interface\TutorialFrame\TutorialFrameBackground" edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
+          <BackgroundInsets>
+            <AbsInset left="3" right="5" top="3" bottom="5" />
+          </BackgroundInsets>
+          <TileSize>
+            <AbsValue val="16" />
+          </TileSize>
+          <EdgeSize>
+            <AbsValue val="16" />
+          </EdgeSize>
+          <BorderColor r="0.8627451" g="0.07843138" b="0.2313726" />
+        </Backdrop>
+        <Scripts>
+          <OnEscapePressed>self:ClearFocus(self);</OnEscapePressed>
+        </Scripts>
+        <FontString font="Fonts\ARIALN.TTF">
+          <FontHeight>
+            <AbsValue val="14" />
+          </FontHeight>
+          <Color r="1" g="1" b="1" />
+          <Shadow>
+            <Color r="0" g="0" b="0" />
+            <Offset>
+              <AbsDimension x="1" y="-1" />
+            </Offset>
+          </Shadow>
+        </FontString>
+        <HighlightColor r="1" g="1" b="1" />
+        <TextInsets>
+          <AbsInset left="0" right="0" top="0" bottom="0" />
+        </TextInsets>
+      </EditBox>
+      <EditBox name="ObjectMTxt" autoFocus="false">
+        <!--<FrameSkin skinid="f15d4970-d66d-444e-bb2d-1ad102c87fed" frameid="f15d4975-d66d-444e-bb2d-1ad102c87fed" />-->
+        <Size>
+          <AbsDimension x="100" y="20" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="380" y="-19" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Backdrop bgFile="Interface\TutorialFrame\TutorialFrameBackground" edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
+          <BackgroundInsets>
+            <AbsInset left="3" right="5" top="3" bottom="5" />
+          </BackgroundInsets>
+          <TileSize>
+            <AbsValue val="16" />
+          </TileSize>
+          <EdgeSize>
+            <AbsValue val="16" />
+          </EdgeSize>
+          <BorderColor r="0.8627451" g="0.07843138" b="0.2313726" />
+        </Backdrop>
+        <Scripts>
+          <OnEscapePressed>self:ClearFocus(self);</OnEscapePressed>
+        </Scripts>
+        <FontString font="Fonts\ARIALN.TTF">
+          <FontHeight>
+            <AbsValue val="14" />
+          </FontHeight>
+          <Color r="1" g="1" b="1" />
+          <Shadow>
+            <Color r="0" g="0" b="0" />
+            <Offset>
+              <AbsDimension x="1" y="-1" />
+            </Offset>
+          </Shadow>
+        </FontString>
+        <HighlightColor r="1" g="1" b="1" />
+        <TextInsets>
+          <AbsInset left="0" right="0" top="0" bottom="0" />
+        </TextInsets>
+      </EditBox>
+      <Button name="$parentButton15" text="Down/Z-">
+        <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508884-59c2-4f83-ae10-27aaad48391b" />-->
         <Size>
           <AbsDimension x="116" y="22" />
         </Size>
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="195" y="-177" />
-            </Offset>
-          </Anchor>
-        </Anchors>
-        <Layers>
-          <Layer>
-            <FontString name="$parentLabel" font="Fonts\FRIZQT__.TTF" text="GPS Build">
-              <Anchors>
-                <Anchor point="TOPLEFT" />
-                <Anchor point="BOTTOMRIGHT" />
-              </Anchors>
-              <FontHeight>
-                <AbsValue val="12" />
-              </FontHeight>
-              <Color r="1" g="0.8196079" b="0" />
-              <Shadow>
-                <Color r="0" g="0" b="0" />
-                <Offset>
-                  <AbsDimension x="1" y="-1" />
-                </Offset>
-              </Shadow>
-            </FontString>
-          </Layer>
-        </Layers>
-      </Frame>
-      <Button name="$parentButton2" text="Tusk's Happy Build Button">
-        <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508884-59c2-4f83-ae10-27aaad48391b" />-->
-        <Size>
-          <AbsDimension x="116" y="60" />
-        </Size>
-        <Anchors>
-          <Anchor point="TOPLEFT">
-            <Offset>
-              <AbsDimension x="195" y="-111" />
+              <AbsDimension x="381" y="-185" />
             </Offset>
           </Anchor>
         </Anchors>
         <Scripts>
-          <OnClick>GPSBuild()
-; PlaceObject();
+          <OnClick>EchelonedAssistant:DMDown();
 </OnClick>
         </Scripts>
-        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </NormalTexture>
-        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </PushedTexture>
-        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </DisabledTexture>
-        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </HighlightTexture>
         <ButtonText name="$parentText">
@@ -171,48 +690,282 @@
         <HighlightFont style="GameFontHighlight" />
         <DisabledFont style="GameFontDisable" />
       </Button>
-      <Frame name="$parentLabel3">
-        <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508885-59c2-4f83-ae10-27aaad48391b" />-->
+      <Button name="$parentButton14" text="Up/Z+">
+        <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508884-59c2-4f83-ae10-27aaad48391b" />-->
         <Size>
-          <AbsDimension x="55" y="18" />
+          <AbsDimension x="116" y="20" />
         </Size>
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="24" y="-177" />
+              <AbsDimension x="381" y="-159" />
             </Offset>
           </Anchor>
         </Anchors>
-        <Layers>
-          <Layer>
-            <FontString name="$parentLabel" font="Fonts\FRIZQT__.TTF" text="Orien.">
-              <Anchors>
-                <Anchor point="TOPLEFT" />
-                <Anchor point="BOTTOMRIGHT" />
-              </Anchors>
-              <FontHeight>
-                <AbsValue val="12" />
-              </FontHeight>
-              <Color r="1" g="0.8196079" b="0" />
-              <Shadow>
-                <Color r="0" g="0" b="0" />
-                <Offset>
-                  <AbsDimension x="1" y="-1" />
-                </Offset>
-              </Shadow>
-            </FontString>
-          </Layer>
-        </Layers>
-      </Frame>
-      <Frame name="Z">
-        <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508885-59c2-4f83-ae10-27aaad48391b" />-->
+        <Scripts>
+          <OnClick>EchelonedAssistant:DMUP();
+</OnClick>
+        </Scripts>
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </NormalTexture>
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </PushedTexture>
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </DisabledTexture>
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </HighlightTexture>
+        <ButtonText name="$parentText">
+          <FontHeight>
+            <AbsValue val="10" />
+          </FontHeight>
+        </ButtonText>
+        <NormalFont style="GameFontNormal" />
+        <HighlightFont style="GameFontHighlight" />
+        <DisabledFont style="GameFontDisable" />
+      </Button>
+      <Button name="$parentButton13" text="Back/X-">
+        <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508884-59c2-4f83-ae10-27aaad48391b" />-->
         <Size>
-          <AbsDimension x="55" y="18" />
+          <AbsDimension x="71" y="18" />
         </Size>
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="24" y="-151" />
+              <AbsDimension x="228" y="-185" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnClick>EchelonedAssistant:DMBack();
+</OnClick>
+        </Scripts>
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </NormalTexture>
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </PushedTexture>
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </DisabledTexture>
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </HighlightTexture>
+        <ButtonText name="$parentText">
+          <FontHeight>
+            <AbsValue val="10" />
+          </FontHeight>
+        </ButtonText>
+        <NormalFont style="GameFontNormal" />
+        <HighlightFont style="GameFontHighlight" />
+        <DisabledFont style="GameFontDisable" />
+      </Button>
+      <Button name="$parentButton12" text="Left/Y+">
+        <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508884-59c2-4f83-ae10-27aaad48391b" />-->
+        <Size>
+          <AbsDimension x="61" y="17" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="161" y="-159" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnClick>EchelonedAssistant:DMLeft();
+</OnClick>
+        </Scripts>
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </NormalTexture>
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </PushedTexture>
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </DisabledTexture>
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </HighlightTexture>
+        <ButtonText name="$parentText">
+          <FontHeight>
+            <AbsValue val="10" />
+          </FontHeight>
+        </ButtonText>
+        <NormalFont style="GameFontNormal" />
+        <HighlightFont style="GameFontHighlight" />
+        <DisabledFont style="GameFontDisable" />
+      </Button>
+      <Button name="$parentButton11" text="Right/Y-">
+        <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508884-59c2-4f83-ae10-27aaad48391b" />-->
+        <Size>
+          <AbsDimension x="54" y="17" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="310" y="-159" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnClick>EchelonedAssistant:DMRight();
+</OnClick>
+        </Scripts>
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </NormalTexture>
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </PushedTexture>
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </DisabledTexture>
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </HighlightTexture>
+        <ButtonText name="$parentText">
+          <FontHeight>
+            <AbsValue val="10" />
+          </FontHeight>
+        </ButtonText>
+        <NormalFont style="GameFontNormal" />
+        <HighlightFont style="GameFontHighlight" />
+        <DisabledFont style="GameFontDisable" />
+      </Button>
+      <Button name="$parentButton10" text="X">
+        <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508884-59c2-4f83-ae10-27aaad48391b" />-->
+        <Size>
+          <AbsDimension x="42" y="17" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="241" y="-159" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnClick>EchelonedAssistant:DMSS();
+</OnClick>
+        </Scripts>
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </NormalTexture>
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </PushedTexture>
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </DisabledTexture>
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </HighlightTexture>
+        <ButtonText name="$parentText">
+          <FontHeight>
+            <AbsValue val="10" />
+          </FontHeight>
+        </ButtonText>
+        <NormalFont style="GameFontNormal" />
+        <HighlightFont style="GameFontHighlight" />
+        <DisabledFont style="GameFontDisable" />
+      </Button>
+      <Button name="$parentButton9" text="Front/X+">
+        <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508884-59c2-4f83-ae10-27aaad48391b" />-->
+        <Size>
+          <AbsDimension x="71" y="22" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="228" y="-131" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnClick>EchelonedAssistant:DMFront()
+</OnClick>
+        </Scripts>
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </NormalTexture>
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </PushedTexture>
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </DisabledTexture>
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </HighlightTexture>
+        <ButtonText name="$parentText">
+          <FontHeight>
+            <AbsValue val="10" />
+          </FontHeight>
+        </ButtonText>
+        <NormalFont style="GameFontNormal" />
+        <HighlightFont style="GameFontHighlight" />
+        <DisabledFont style="GameFontDisable" />
+      </Button>
+      <Button name="$parentButton8" text="Delete Macro">
+        <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508884-59c2-4f83-ae10-27aaad48391b" />-->
+        <Size>
+          <AbsDimension x="116" y="18" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="202" y="-97" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnEnter>
+GameTooltip:SetOwner( this, "ANCHOR_LEFT" );
+GameTooltip:AddLine( "|cFFFF0000MAKE SURE YOU WANT TO DELETE!|r" );
+GameTooltip:Show();
+</OnEnter>
+          <OnLeave>
+GameTooltip:Hide()
+</OnLeave>
+          <OnClick>Deletego()
+</OnClick>
+        </Scripts>
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </NormalTexture>
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </PushedTexture>
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </DisabledTexture>
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </HighlightTexture>
+        <ButtonText name="$parentText">
+          <FontHeight>
+            <AbsValue val="10" />
+          </FontHeight>
+        </ButtonText>
+        <NormalFont style="GameFontNormal" />
+        <HighlightFont style="GameFontHighlight" />
+        <DisabledFont style="GameFontDisable" />
+      </Button>
+      <Frame name="Z">
+        <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508885-59c2-4f83-ae10-27aaad48391b" />-->
+        <Size>
+          <AbsDimension x="22" y="18" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="15" y="-145" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -237,77 +990,15 @@
           </Layer>
         </Layers>
       </Frame>
-      <EditBox name="OrientationBox2" enableMouse="true">
-        <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508887-59c2-4f83-ae10-27aaad48391b" />-->
-        <Size>
-          <AbsDimension x="55" y="22" />
-        </Size>
-        <Anchors>
-          <Anchor point="TOPLEFT">
-            <Offset>
-              <AbsDimension x="105" y="-177" />
-            </Offset>
-          </Anchor>
-        </Anchors>
-        <Layers>
-          <Layer level="BACKGROUND">
-            <Texture name="$parentLeft" file="Interface\Common\Common-Input-Border">
-              <Size>
-                <AbsDimension x="8" y="20" />
-              </Size>
-              <Anchors>
-                <Anchor point="LEFT" />
-              </Anchors>
-              <TexCoords left="0" right="0.0625" top="0" bottom="0.625" />
-            </Texture>
-            <Texture name="$parentRight" file="Interface\Common\Common-Input-Border">
-              <Size>
-                <AbsDimension x="8" y="20" />
-              </Size>
-              <Anchors>
-                <Anchor point="RIGHT" />
-              </Anchors>
-              <TexCoords left="0.9375" right="1" top="0" bottom="0.625" />
-            </Texture>
-            <Texture name="$parentMiddle" file="Interface\Common\Common-Input-Border">
-              <Size>
-                <AbsDimension x="10" y="20" />
-              </Size>
-              <Anchors>
-                <Anchor point="LEFT" relativeTo="$parentLeft" relativePoint="RIGHT" />
-                <Anchor point="RIGHT" relativeTo="$parentRight" relativePoint="LEFT" />
-              </Anchors>
-              <TexCoords left="0.0625" right="0.9375" top="0" bottom="0.625" />
-            </Texture>
-          </Layer>
-        </Layers>
-        <Scripts>
-          <OnLoad>self:SetAutoFocus(false);</OnLoad>
-          <OnHide>self:SetText("");</OnHide>
-          <OnEscapePressed>self:ClearFocus(self);</OnEscapePressed>
-        </Scripts>
-        <FontString font="Fonts\ARIALN.TTF">
-          <FontHeight>
-            <AbsValue val="14" />
-          </FontHeight>
-          <Color r="1" g="1" b="1" />
-          <Shadow>
-            <Color r="0" g="0" b="0" />
-            <Offset>
-              <AbsDimension x="1" y="-1" />
-            </Offset>
-          </Shadow>
-        </FontString>
-      </EditBox>
       <Frame name="$parentLabel2">
         <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508885-59c2-4f83-ae10-27aaad48391b" />-->
         <Size>
-          <AbsDimension x="52" y="18" />
+          <AbsDimension x="22" y="18" />
         </Size>
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="27" y="-123" />
+              <AbsDimension x="15" y="-121" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -335,12 +1026,12 @@
       <Frame name="$parentLabel1">
         <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508885-59c2-4f83-ae10-27aaad48391b" />-->
         <Size>
-          <AbsDimension x="52" y="18" />
+          <AbsDimension x="22" y="18" />
         </Size>
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="27" y="-95" />
+              <AbsDimension x="15" y="-97" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -365,238 +1056,15 @@
           </Layer>
         </Layers>
       </Frame>
-      <EditBox name="ZCord2" enableMouse="true">
-        <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508887-59c2-4f83-ae10-27aaad48391b" />-->
-        <Size>
-          <AbsDimension x="55" y="20" />
-        </Size>
-        <Anchors>
-          <Anchor point="TOPLEFT">
-            <Offset>
-              <AbsDimension x="105" y="-151" />
-            </Offset>
-          </Anchor>
-        </Anchors>
-        <Layers>
-          <Layer level="BACKGROUND">
-            <Texture name="$parentLeft" file="Interface\Common\Common-Input-Border">
-              <Size>
-                <AbsDimension x="8" y="20" />
-              </Size>
-              <Anchors>
-                <Anchor point="LEFT" />
-              </Anchors>
-              <TexCoords left="0" right="0.0625" top="0" bottom="0.625" />
-            </Texture>
-            <Texture name="$parentRight" file="Interface\Common\Common-Input-Border">
-              <Size>
-                <AbsDimension x="8" y="20" />
-              </Size>
-              <Anchors>
-                <Anchor point="RIGHT" />
-              </Anchors>
-              <TexCoords left="0.9375" right="1" top="0" bottom="0.625" />
-            </Texture>
-            <Texture name="$parentMiddle" file="Interface\Common\Common-Input-Border">
-              <Size>
-                <AbsDimension x="10" y="20" />
-              </Size>
-              <Anchors>
-                <Anchor point="LEFT" relativeTo="$parentLeft" relativePoint="RIGHT" />
-                <Anchor point="RIGHT" relativeTo="$parentRight" relativePoint="LEFT" />
-              </Anchors>
-              <TexCoords left="0.0625" right="0.9375" top="0" bottom="0.625" />
-            </Texture>
-          </Layer>
-        </Layers>
-        <Scripts>
-          <OnLoad>self:SetAutoFocus(false);</OnLoad>
-          <OnHide>self:SetText("");</OnHide>
-          <OnEscapePressed>self:ClearFocus(self);</OnEscapePressed>
-        </Scripts>
-        <FontString font="Fonts\ARIALN.TTF">
-          <FontHeight>
-            <AbsValue val="14" />
-          </FontHeight>
-          <Color r="1" g="1" b="1" />
-          <Shadow>
-            <Color r="0" g="0" b="0" />
-            <Offset>
-              <AbsDimension x="1" y="-1" />
-            </Offset>
-          </Shadow>
-        </FontString>
-      </EditBox>
-      <EditBox name="YCord2" enableMouse="true">
-        <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508887-59c2-4f83-ae10-27aaad48391b" />-->
-        <Size>
-          <AbsDimension x="55" y="22" />
-        </Size>
-        <Anchors>
-          <Anchor point="TOPLEFT">
-            <Offset>
-              <AbsDimension x="105" y="-123" />
-            </Offset>
-          </Anchor>
-        </Anchors>
-        <Layers>
-          <Layer level="BACKGROUND">
-            <Texture name="$parentLeft" file="Interface\Common\Common-Input-Border">
-              <Size>
-                <AbsDimension x="8" y="20" />
-              </Size>
-              <Anchors>
-                <Anchor point="LEFT" />
-              </Anchors>
-              <TexCoords left="0" right="0.0625" top="0" bottom="0.625" />
-            </Texture>
-            <Texture name="$parentRight" file="Interface\Common\Common-Input-Border">
-              <Size>
-                <AbsDimension x="8" y="20" />
-              </Size>
-              <Anchors>
-                <Anchor point="RIGHT" />
-              </Anchors>
-              <TexCoords left="0.9375" right="1" top="0" bottom="0.625" />
-            </Texture>
-            <Texture name="$parentMiddle" file="Interface\Common\Common-Input-Border">
-              <Size>
-                <AbsDimension x="10" y="20" />
-              </Size>
-              <Anchors>
-                <Anchor point="LEFT" relativeTo="$parentLeft" relativePoint="RIGHT" />
-                <Anchor point="RIGHT" relativeTo="$parentRight" relativePoint="LEFT" />
-              </Anchors>
-              <TexCoords left="0.0625" right="0.9375" top="0" bottom="0.625" />
-            </Texture>
-          </Layer>
-        </Layers>
-        <Scripts>
-          <OnLoad>self:SetAutoFocus(false);</OnLoad>
-          <OnHide>self:SetText("");</OnHide>
-          <OnEscapePressed>self:ClearFocus(self);</OnEscapePressed>
-        </Scripts>
-        <FontString font="Fonts\ARIALN.TTF">
-          <FontHeight>
-            <AbsValue val="14" />
-          </FontHeight>
-          <Color r="1" g="1" b="1" />
-          <Shadow>
-            <Color r="0" g="0" b="0" />
-            <Offset>
-              <AbsDimension x="1" y="-1" />
-            </Offset>
-          </Shadow>
-        </FontString>
-      </EditBox>
-      <EditBox name="XCord2" enableMouse="true">
-        <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508887-59c2-4f83-ae10-27aaad48391b" />-->
-        <Size>
-          <AbsDimension x="55" y="22" />
-        </Size>
-        <Anchors>
-          <Anchor point="TOPLEFT">
-            <Offset>
-              <AbsDimension x="105" y="-95" />
-            </Offset>
-          </Anchor>
-        </Anchors>
-        <Layers>
-          <Layer level="BACKGROUND">
-            <Texture name="$parentLeft" file="Interface\Common\Common-Input-Border">
-              <Size>
-                <AbsDimension x="8" y="20" />
-              </Size>
-              <Anchors>
-                <Anchor point="LEFT" />
-              </Anchors>
-              <TexCoords left="0" right="0.0625" top="0" bottom="0.625" />
-            </Texture>
-            <Texture name="$parentRight" file="Interface\Common\Common-Input-Border">
-              <Size>
-                <AbsDimension x="8" y="20" />
-              </Size>
-              <Anchors>
-                <Anchor point="RIGHT" />
-              </Anchors>
-              <TexCoords left="0.9375" right="1" top="0" bottom="0.625" />
-            </Texture>
-            <Texture name="$parentMiddle" file="Interface\Common\Common-Input-Border">
-              <Size>
-                <AbsDimension x="10" y="20" />
-              </Size>
-              <Anchors>
-                <Anchor point="LEFT" relativeTo="$parentLeft" relativePoint="RIGHT" />
-                <Anchor point="RIGHT" relativeTo="$parentRight" relativePoint="LEFT" />
-              </Anchors>
-              <TexCoords left="0.0625" right="0.9375" top="0" bottom="0.625" />
-            </Texture>
-          </Layer>
-        </Layers>
-        <Scripts>
-          <OnLoad>self:SetAutoFocus(false);</OnLoad>
-          <OnHide>self:SetText("");</OnHide>
-          <OnEscapePressed>self:ClearFocus(self);</OnEscapePressed>
-        </Scripts>
-        <FontString font="Fonts\ARIALN.TTF">
-          <FontHeight>
-            <AbsValue val="14" />
-          </FontHeight>
-          <Color r="1" g="1" b="1" />
-          <Shadow>
-            <Color r="0" g="0" b="0" />
-            <Offset>
-              <AbsDimension x="1" y="-1" />
-            </Offset>
-          </Shadow>
-        </FontString>
-      </EditBox>
-      <Button name="$parentButton6" text="Quick Portals">
+      <Button name="$parentButton5" text="Enable">
         <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508884-59c2-4f83-ae10-27aaad48391b" />-->
         <Size>
-          <AbsDimension x="116" y="17" />
+          <AbsDimension x="71" y="17" />
         </Size>
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="381" y="-26" />
-            </Offset>
-          </Anchor>
-        </Anchors>
-        <Scripts>
-          <OnClick>ObjectForm:Hide(); QuickPortalForm:Show();
-</OnClick>
-        </Scripts>
-        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
-          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
-        </NormalTexture>
-        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
-          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
-        </PushedTexture>
-        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
-          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
-        </DisabledTexture>
-        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
-          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
-        </HighlightTexture>
-        <ButtonText name="$parentText">
-          <FontHeight>
-            <AbsValue val="10" />
-          </FontHeight>
-        </ButtonText>
-        <NormalFont style="GameFontNormal" />
-        <HighlightFont style="GameFontHighlight" />
-        <DisabledFont style="GameFontDisable" />
-      </Button>
-      <Button name="$parentButton5" text="Enable Object">
-        <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508884-59c2-4f83-ae10-27aaad48391b" />-->
-        <Size>
-          <AbsDimension x="116" y="17" />
-        </Size>
-        <Anchors>
-          <Anchor point="TOPLEFT">
-            <Offset>
-              <AbsDimension x="381" y="-49" />
+              <AbsDimension x="228" y="-49" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -604,16 +1072,16 @@
           <OnClick>EnableObject()
 </OnClick>
         </Scripts>
-        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </NormalTexture>
-        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </PushedTexture>
-        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </DisabledTexture>
-        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </HighlightTexture>
         <ButtonText name="$parentText">
@@ -625,15 +1093,15 @@
         <HighlightFont style="GameFontHighlight" />
         <DisabledFont style="GameFontDisable" />
       </Button>
-      <Button name="$parentButton4" text="Activate Object">
+      <Button name="$parentButton4" text="Activate">
         <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508884-59c2-4f83-ae10-27aaad48391b" />-->
         <Size>
-          <AbsDimension x="116" y="17" />
+          <AbsDimension x="73" y="17" />
         </Size>
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="259" y="-72" />
+              <AbsDimension x="149" y="-72" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -641,16 +1109,16 @@
           <OnClick>ActivateObject()
 </OnClick>
         </Scripts>
-        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </NormalTexture>
-        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </PushedTexture>
-        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </DisabledTexture>
-        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </HighlightTexture>
         <ButtonText name="$parentText">
@@ -662,15 +1130,15 @@
         <HighlightFont style="GameFontHighlight" />
         <DisabledFont style="GameFontDisable" />
       </Button>
-      <Button name="$parentButton3" text="Object Info">
+      <Button name="$parentButton3" text="Info">
         <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508884-59c2-4f83-ae10-27aaad48391b" />-->
         <Size>
-          <AbsDimension x="116" y="17" />
+          <AbsDimension x="73" y="17" />
         </Size>
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="259" y="-49" />
+              <AbsDimension x="149" y="-49" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -678,16 +1146,16 @@
           <OnClick>ObjectInfo()
 </OnClick>
         </Scripts>
-        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </NormalTexture>
-        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </PushedTexture>
-        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </DisabledTexture>
-        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </HighlightTexture>
         <ButtonText name="$parentText">
@@ -699,35 +1167,35 @@
         <HighlightFont style="GameFontHighlight" />
         <DisabledFont style="GameFontDisable" />
       </Button>
-      <CheckButton name="NoSaveCheck">
+      <CheckButton name="SaveSpawn" checked="true">
         <!--<FrameSkin skinid="f15d4970-d66d-444e-bb2d-1ad102c87fed" frameid="f15d4974-d66d-444e-bb2d-1ad102c87fed" />-->
         <Size>
-          <AbsDimension x="32" y="23" />
+          <AbsDimension x="22" y="23" />
         </Size>
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="27" y="-20" />
+              <AbsDimension x="15" y="-20" />
             </Offset>
           </Anchor>
         </Anchors>
-        <NormalTexture file="Interface\Buttons\UI-CheckBox-Up" />
-        <PushedTexture file="Interface\Buttons\UI-CheckBox-Down" />
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-CheckBox-Up" />
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-CheckBox-Down" />
         <DisabledTexture />
-        <HighlightTexture file="Interface\Buttons\UI-CheckBox-Highlight" alphaMode="ADD" />
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-CheckBox-Highlight" alphaMode="ADD" />
         <PushedTextOffset x="0" y="0" />
         <CheckedTexture file="Interface\Buttons\UI-CheckBox-Check" />
-        <DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled" />
+        <DisabledCheckedTexture file="Interface\Addons\EchelonedAssistant\art\UI-CheckBox-Check-Disabled" />
       </CheckButton>
-      <Button name="DeleteObjectNumber" text="Delete Object">
+      <Button name="DeleteObjectNumber" text="Delete">
         <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508884-59c2-4f83-ae10-27aaad48391b" />-->
         <Size>
-          <AbsDimension x="116" y="17" />
+          <AbsDimension x="71" y="17" />
         </Size>
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="381" y="-72" />
+              <AbsDimension x="228" y="-72" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -735,16 +1203,16 @@
           <OnClick>DeleteObject();
 </OnClick>
         </Scripts>
-        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </NormalTexture>
-        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </PushedTexture>
-        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </DisabledTexture>
-        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </HighlightTexture>
         <ButtonText name="$parentText">
@@ -756,15 +1224,15 @@
         <HighlightFont style="GameFontHighlight" />
         <DisabledFont style="GameFontDisable" />
       </Button>
-      <Button name="$parentButton1" text="Target Object">
+      <Button name="$parentButton1" text="Target ">
         <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508884-59c2-4f83-ae10-27aaad48391b" />-->
         <Size>
-          <AbsDimension x="116" y="17" />
+          <AbsDimension x="58" y="17" />
         </Size>
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="137" y="-49" />
+              <AbsDimension x="85" y="-49" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -772,16 +1240,16 @@
           <OnClick>TargetObject();
 </OnClick>
         </Scripts>
-        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </NormalTexture>
-        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </PushedTexture>
-        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </DisabledTexture>
-        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </HighlightTexture>
         <ButtonText name="$parentText">
@@ -793,32 +1261,32 @@
         <HighlightFont style="GameFontHighlight" />
         <DisabledFont style="GameFontDisable" />
       </Button>
-      <Button name="Done" text="Done">
+      <Button name="Done" text="x">
         <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508884-59c2-4f83-ae10-27aaad48391b" />-->
         <Size>
-          <AbsDimension x="116" y="17" />
+          <AbsDimension x="24" y="17" />
         </Size>
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="402" y="-182" />
+              <AbsDimension x="486" y="-3" />
             </Offset>
           </Anchor>
         </Anchors>
         <Scripts>
-          <OnClick>ObjectForm:Hide(); OpenMain();
+          <OnClick>ObjectForm:Hide(); QuickPortalForm:Hide(); EchelonedAssistant:OpenMain();
 </OnClick>
         </Scripts>
-        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </NormalTexture>
-        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </PushedTexture>
-        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </DisabledTexture>
-        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </HighlightTexture>
         <ButtonText name="$parentText">
@@ -830,10 +1298,10 @@
         <HighlightFont style="GameFontHighlight" />
         <DisabledFont style="GameFontDisable" />
       </Button>
-      <Button name="$parentComponent1" text="Place Object">
+      <Button name="$parentComponent1" text="Place">
         <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508884-59c2-4f83-ae10-27aaad48391b" />-->
         <Size>
-          <AbsDimension x="116" y="17" />
+          <AbsDimension x="64" y="17" />
         </Size>
         <Anchors>
           <Anchor point="TOPLEFT">
@@ -851,16 +1319,16 @@ ObjectNumber:ClearFocus();
 end
 </OnClick>
         </Scripts>
-        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </NormalTexture>
-        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </PushedTexture>
-        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </DisabledTexture>
-        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </HighlightTexture>
         <ButtonText name="$parentText">
@@ -875,18 +1343,18 @@ end
       <Frame name="$parentComponent2">
         <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508885-59c2-4f83-ae10-27aaad48391b" />-->
         <Size>
-          <AbsDimension x="78" y="23" />
+          <AbsDimension x="36" y="23" />
         </Size>
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="65" y="-20" />
+              <AbsDimension x="43" y="-20" />
             </Offset>
           </Anchor>
         </Anchors>
         <Layers>
           <Layer>
-            <FontString name="$parentLabel" font="Fonts\FRIZQT__.TTF" text="Don't Save">
+            <FontString name="$parentLabel" font="Fonts\FRIZQT__.TTF" text="Save">
               <Anchors>
                 <Anchor point="TOPLEFT" />
                 <Anchor point="BOTTOMRIGHT" />
@@ -905,15 +1373,15 @@ end
           </Layer>
         </Layers>
       </Frame>
-      <Button name="$parentComponent3" text="Object Scale">
+      <Button name="$parentComponent3" text="Scale">
         <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508884-59c2-4f83-ae10-27aaad48391b" />-->
         <Size>
-          <AbsDimension x="116" y="17" />
+          <AbsDimension x="58" y="17" />
         </Size>
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="137" y="-72" />
+              <AbsDimension x="85" y="-72" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -934,16 +1402,16 @@ ObjectNumber:ClearFocus();
 end
 </OnClick>
         </Scripts>
-        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </NormalTexture>
-        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </PushedTexture>
-        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </DisabledTexture>
-        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </HighlightTexture>
         <ButtonText name="$parentText">
@@ -955,77 +1423,10 @@ end
         <HighlightFont style="GameFontHighlight" />
         <DisabledFont style="GameFontDisable" />
       </Button>
-      <EditBox name="ObjectNumber" enableMouse="true">
-        <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508887-59c2-4f83-ae10-27aaad48391b" />-->
-        <Size>
-          <AbsDimension x="116" y="17" />
-        </Size>
-        <Anchors>
-          <Anchor point="TOPLEFT">
-            <Offset>
-              <AbsDimension x="195" y="-26" />
-            </Offset>
-          </Anchor>
-        </Anchors>
-        <Layers>
-          <Layer level="BACKGROUND">
-            <Texture name="$parentLeft" file="Interface\Common\Common-Input-Border">
-              <Size>
-                <AbsDimension x="8" y="20" />
-              </Size>
-              <Anchors>
-                <Anchor point="LEFT" />
-              </Anchors>
-              <TexCoords left="0" right="0.0625" top="0" bottom="0.625" />
-            </Texture>
-            <Texture name="$parentRight" file="Interface\Common\Common-Input-Border">
-              <Size>
-                <AbsDimension x="8" y="20" />
-              </Size>
-              <Anchors>
-                <Anchor point="RIGHT" />
-              </Anchors>
-              <TexCoords left="0.9375" right="1" top="0" bottom="0.625" />
-            </Texture>
-            <Texture name="$parentMiddle" file="Interface\Common\Common-Input-Border">
-              <Size>
-                <AbsDimension x="10" y="20" />
-              </Size>
-              <Anchors>
-                <Anchor point="LEFT" relativeTo="$parentLeft" relativePoint="RIGHT" />
-                <Anchor point="RIGHT" relativeTo="$parentRight" relativePoint="LEFT" />
-              </Anchors>
-              <TexCoords left="0.0625" right="0.9375" top="0" bottom="0.625" />
-            </Texture>
-          </Layer>
-        </Layers>
-        <Scripts>
-          <OnLoad>self:SetAutoFocus(false);
-</OnLoad>
-          <OnHide>self:SetText("");
-</OnHide>
-          <OnEscapePressed>self:ClearFocus(self);
-</OnEscapePressed>
-          <OnTabPressed>self:ClearFocus(self);
-</OnTabPressed>
-        </Scripts>
-        <FontString font="Fonts\ARIALN.TTF">
-          <FontHeight>
-            <AbsValue val="14" />
-          </FontHeight>
-          <Color r="1" g="1" b="1" />
-          <Shadow>
-            <Color r="0" g="0" b="0" />
-            <Offset>
-              <AbsDimension x="1" y="-1" />
-            </Offset>
-          </Shadow>
-        </FontString>
-      </EditBox>
-      <Button name="$parentComponent4" text="Lookup Object">
+      <Button name="$parentComponent4" text="Lookup">
         <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508884-59c2-4f83-ae10-27aaad48391b" />-->
         <Size>
-          <AbsDimension x="116" y="17" />
+          <AbsDimension x="64" y="17" />
         </Size>
         <Anchors>
           <Anchor point="TOPLEFT">
@@ -1043,16 +1444,16 @@ ObjectNumber:ClearFocus();
 end
 </OnClick>
         </Scripts>
-        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </NormalTexture>
-        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </PushedTexture>
-        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </DisabledTexture>
-        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </HighlightTexture>
         <ButtonText name="$parentText">
@@ -1066,7 +1467,7 @@ end
       </Button>
     </Frames>
     <Scripts>
-      <OnLoad>GMHelperOnLoad(self)
+      <OnLoad>self:RegisterForDrag("RightButton");
 </OnLoad>
       <OnDragStart>self:StartMoving()
 </OnDragStart>

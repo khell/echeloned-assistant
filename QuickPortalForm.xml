@@ -3,16 +3,16 @@
   <Frame name="QuickPortalForm" hidden="true" parent="UIParent" movable="true" resizable="true" enableKeyboard="true" clampedToScreen="true">
     <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508883-59c2-4f83-ae10-27aaad48391b" />-->
     <Size>
-      <AbsDimension x="203" y="206" />
+      <AbsDimension x="204" y="372" />
     </Size>
     <Anchors>
-      <Anchor point="RIGHT" relativeTo="UIParent">
+      <Anchor point="TOPRIGHT" relativeTo="ObjectForm">
         <Offset>
-          <AbsDimension x="0" y="0" />
+          <AbsDimension x="180" y="0" />
         </Offset>
       </Anchor>
     </Anchors>
-    <Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+    <Backdrop bgFile="Interface\Addons\EchelonedAssistant\art\backdrop.tga" tile="false">
       <BackgroundInsets>
         <AbsInset left="11" right="12" top="12" bottom="11" />
       </BackgroundInsets>
@@ -25,7 +25,7 @@
     </Backdrop>
     <Layers>
       <Layer>
-        <Texture name="$parentTitleBorder" file="Interface\DialogFrame\UI-DialogBox-Header">
+        <Texture name="$parentTitleBorder" file="ENVIRONMENTS\STARS\AUCHINDOUN_VORTEXCLOUD01.blp">
           <Size>
             <AbsDimension x="160" y="32" />
           </Size>
@@ -38,7 +38,7 @@
           </Anchors>
           <TexCoords left="0.2" right="0.8" top="0" bottom="0.6" />
         </Texture>
-        <FontString name="$parentTitleString" font="Fonts\FRIZQT__.TTF" text="Quick Portals">
+        <FontString name="$parentTitleString" font="Fonts\FRIZQT__.TTF" text="Quick Objects">
           <Size>
             <AbsDimension x="140" y="0" />
           </Size>
@@ -63,42 +63,664 @@
       </Layer>
     </Layers>
     <Frames>
-      <Button name="$parentButton2" text="Done">
-        <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508884-59c2-4f83-ae10-27aaad48391b" />-->
+      <Button name="$parentButton19" text="Canopy bed">
+        <!--<FrameSkin skinid="f15d4970-d66d-444e-bb2d-1ad102c87fed" frameid="f15d4973-d66d-444e-bb2d-1ad102c87fed" />-->
         <Size>
-          <AbsDimension x="170" y="17" />
+          <AbsDimension x="82" y="12" />
         </Size>
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="16" y="-173" />
+              <AbsDimension x="104" y="-297" />
             </Offset>
           </Anchor>
         </Anchors>
         <Scripts>
-          <OnClick>QuickPortalForm:Hide(); ObjectForm:Show();
-</OnClick>
+          <OnClick>ObjectNumber:SetText("187526")</OnClick>
         </Scripts>
-        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </NormalTexture>
-        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </PushedTexture>
-        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </DisabledTexture>
-        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </HighlightTexture>
         <ButtonText name="$parentText">
-          <Anchors>
-            <Anchor point="CENTER">
-              <Offset>
-                <AbsDimension x="0" y="1" />
-              </Offset>
-            </Anchor>
-          </Anchors>
+          <FontHeight>
+            <AbsValue val="10" />
+          </FontHeight>
+        </ButtonText>
+        <NormalFont style="GameFontNormal" />
+        <HighlightFont style="GameFontHighlight" />
+        <DisabledFont style="GameFontDisable" />
+        <PushedTextOffset x="0" y="0" />
+      </Button>
+      <Button name="$parentButton18" text="Invisible Wall">
+        <!--<FrameSkin skinid="f15d4970-d66d-444e-bb2d-1ad102c87fed" frameid="f15d4973-d66d-444e-bb2d-1ad102c87fed" />-->
+        <Size>
+          <AbsDimension x="82" y="14" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="104" y="-277" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnClick>ObjectNumber:SetText("180322")</OnClick>
+        </Scripts>
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </NormalTexture>
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </PushedTexture>
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </DisabledTexture>
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </HighlightTexture>
+        <ButtonText name="$parentText">
+          <FontHeight>
+            <AbsValue val="10" />
+          </FontHeight>
+        </ButtonText>
+        <NormalFont style="GameFontNormal" />
+        <HighlightFont style="GameFontHighlight" />
+        <DisabledFont style="GameFontDisable" />
+        <PushedTextOffset x="0" y="0" />
+      </Button>
+      <Button name="$parentButton17" text="Bookcase">
+        <!--<FrameSkin skinid="f15d4970-d66d-444e-bb2d-1ad102c87fed" frameid="f15d4973-d66d-444e-bb2d-1ad102c87fed" />-->
+        <Size>
+          <AbsDimension x="81" y="14" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="17" y="-315" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnClick>ObjectNumber:SetText("201755")</OnClick>
+        </Scripts>
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </NormalTexture>
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </PushedTexture>
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </DisabledTexture>
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </HighlightTexture>
+        <ButtonText name="$parentText">
+          <FontHeight>
+            <AbsValue val="10" />
+          </FontHeight>
+        </ButtonText>
+        <NormalFont style="GameFontNormal" />
+        <HighlightFont style="GameFontHighlight" />
+        <DisabledFont style="GameFontDisable" />
+        <PushedTextOffset x="0" y="0" />
+      </Button>
+      <Button name="$parentButton16" text="Wooden Table">
+        <!--<FrameSkin skinid="f15d4970-d66d-444e-bb2d-1ad102c87fed" frameid="f15d4973-d66d-444e-bb2d-1ad102c87fed" />-->
+        <Size>
+          <AbsDimension x="82" y="12" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="16" y="-297" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnClick>ObjectNumber:SetText("181075")</OnClick>
+        </Scripts>
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </NormalTexture>
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </PushedTexture>
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </DisabledTexture>
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </HighlightTexture>
+        <ButtonText name="$parentText">
+          <FontHeight>
+            <AbsValue val="10" />
+          </FontHeight>
+        </ButtonText>
+        <NormalFont style="GameFontNormal" />
+        <HighlightFont style="GameFontHighlight" />
+        <DisabledFont style="GameFontDisable" />
+        <PushedTextOffset x="0" y="0" />
+      </Button>
+      <Button name="$parentButton15" text="Translocator #1">
+        <!--<FrameSkin skinid="f15d4970-d66d-444e-bb2d-1ad102c87fed" frameid="f15d4973-d66d-444e-bb2d-1ad102c87fed" />-->
+        <Size>
+          <AbsDimension x="82" y="16" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="104" y="-255" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnClick>ObjectNumber:SetText("187428")</OnClick>
+        </Scripts>
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </NormalTexture>
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </PushedTexture>
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </DisabledTexture>
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </HighlightTexture>
+        <ButtonText name="$parentText">
+          <FontHeight>
+            <AbsValue val="10" />
+          </FontHeight>
+        </ButtonText>
+        <NormalFont style="GameFontNormal" />
+        <HighlightFont style="GameFontHighlight" />
+        <DisabledFont style="GameFontDisable" />
+        <PushedTextOffset x="0" y="0" />
+      </Button>
+      <Button name="$parentButton14" text="Translocator #2">
+        <!--<FrameSkin skinid="f15d4970-d66d-444e-bb2d-1ad102c87fed" frameid="f15d4973-d66d-444e-bb2d-1ad102c87fed" />-->
+        <Size>
+          <AbsDimension x="82" y="14" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="16" y="-277" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnClick>ObjectNumber:SetText("187431")</OnClick>
+        </Scripts>
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </NormalTexture>
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </PushedTexture>
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </DisabledTexture>
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </HighlightTexture>
+        <ButtonText name="$parentText">
+          <FontHeight>
+            <AbsValue val="10" />
+          </FontHeight>
+        </ButtonText>
+        <NormalFont style="GameFontNormal" />
+        <HighlightFont style="GameFontHighlight" />
+        <DisabledFont style="GameFontDisable" />
+        <PushedTextOffset x="0" y="0" />
+      </Button>
+      <Button name="$parentButton13" text="Waterfall">
+        <!--<FrameSkin skinid="f15d4970-d66d-444e-bb2d-1ad102c87fed" frameid="f15d4973-d66d-444e-bb2d-1ad102c87fed" />-->
+        <Size>
+          <AbsDimension x="82" y="16" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="16" y="-255" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnClick>ObjectNumber:SetText("759")</OnClick>
+        </Scripts>
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </NormalTexture>
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </PushedTexture>
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </DisabledTexture>
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </HighlightTexture>
+        <ButtonText name="$parentText">
+          <FontHeight>
+            <AbsValue val="10" />
+          </FontHeight>
+        </ButtonText>
+        <NormalFont style="GameFontNormal" />
+        <HighlightFont style="GameFontHighlight" />
+        <DisabledFont style="GameFontDisable" />
+        <PushedTextOffset x="0" y="0" />
+      </Button>
+      <Button name="$parentButton12" text="Wooden Chair">
+        <!--<FrameSkin skinid="f15d4970-d66d-444e-bb2d-1ad102c87fed" frameid="f15d4973-d66d-444e-bb2d-1ad102c87fed" />-->
+        <Size>
+          <AbsDimension x="82" y="15" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="104" y="-234" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnColorSelect>ObjectNumber:SetText("22357")</OnColorSelect>
+        </Scripts>
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </NormalTexture>
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </PushedTexture>
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </DisabledTexture>
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </HighlightTexture>
+        <ButtonText name="$parentText">
+          <FontHeight>
+            <AbsValue val="10" />
+          </FontHeight>
+        </ButtonText>
+        <NormalFont style="GameFontNormal" />
+        <HighlightFont style="GameFontHighlight" />
+        <DisabledFont style="GameFontDisable" />
+        <PushedTextOffset x="0" y="0" />
+      </Button>
+      <Button name="$parentButton11" text="Water">
+        <!--<FrameSkin skinid="f15d4970-d66d-444e-bb2d-1ad102c87fed" frameid="f15d4973-d66d-444e-bb2d-1ad102c87fed" />-->
+        <Size>
+          <AbsDimension x="81" y="15" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="17" y="-234" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnClick>ObjectNumber:SetText("182951")</OnClick>
+        </Scripts>
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </NormalTexture>
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </PushedTexture>
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </DisabledTexture>
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </HighlightTexture>
+        <ButtonText name="$parentText">
+          <FontHeight>
+            <AbsValue val="10" />
+          </FontHeight>
+        </ButtonText>
+        <NormalFont style="GameFontNormal" />
+        <HighlightFont style="GameFontHighlight" />
+        <DisabledFont style="GameFontDisable" />
+        <PushedTextOffset x="0" y="0" />
+      </Button>
+      <Button name="$parentButton10" text="Green Rug">
+        <!--<FrameSkin skinid="f15d4970-d66d-444e-bb2d-1ad102c87fed" frameid="f15d4973-d66d-444e-bb2d-1ad102c87fed" />-->
+        <Size>
+          <AbsDimension x="82" y="17" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="104" y="-211" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnClick>ObjectNumber:SetText("400033")</OnClick>
+        </Scripts>
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </NormalTexture>
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </PushedTexture>
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </DisabledTexture>
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </HighlightTexture>
+        <ButtonText name="$parentText">
+          <FontHeight>
+            <AbsValue val="10" />
+          </FontHeight>
+        </ButtonText>
+        <NormalFont style="GameFontNormal" />
+        <HighlightFont style="GameFontHighlight" />
+        <DisabledFont style="GameFontDisable" />
+        <PushedTextOffset x="0" y="0" />
+      </Button>
+      <Button name="$parentButton9" text="Construction Sign">
+        <!--<FrameSkin skinid="f15d4970-d66d-444e-bb2d-1ad102c87fed" frameid="f15d4973-d66d-444e-bb2d-1ad102c87fed" />-->
+        <Size>
+          <AbsDimension x="82" y="15" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="16" y="-190" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnClick>ObjectNumber:SetText("400018")</OnClick>
+        </Scripts>
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </NormalTexture>
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </PushedTexture>
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </DisabledTexture>
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </HighlightTexture>
+        <ButtonText name="$parentText">
+          <FontHeight>
+            <AbsValue val="10" />
+          </FontHeight>
+        </ButtonText>
+        <NormalFont style="GameFontNormal" />
+        <HighlightFont style="GameFontHighlight" />
+        <DisabledFont style="GameFontDisable" />
+        <PushedTextOffset x="0" y="0" />
+      </Button>
+      <Button name="$parentButton8" text="Lightwell">
+        <!--<FrameSkin skinid="f15d4970-d66d-444e-bb2d-1ad102c87fed" frameid="f15d4973-d66d-444e-bb2d-1ad102c87fed" />-->
+        <Size>
+          <AbsDimension x="81" y="17" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="17" y="-211" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnClick>ObjectNumber:SetText("190746")</OnClick>
+        </Scripts>
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </NormalTexture>
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </PushedTexture>
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </DisabledTexture>
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </HighlightTexture>
+        <ButtonText name="$parentText">
+          <FontHeight>
+            <AbsValue val="10" />
+          </FontHeight>
+        </ButtonText>
+        <NormalFont style="GameFontNormal" />
+        <HighlightFont style="GameFontHighlight" />
+        <DisabledFont style="GameFontDisable" />
+        <PushedTextOffset x="0" y="0" />
+      </Button>
+      <Button name="$parentButton7" text="Portcullis">
+        <!--<FrameSkin skinid="f15d4970-d66d-444e-bb2d-1ad102c87fed" frameid="f15d4973-d66d-444e-bb2d-1ad102c87fed" />-->
+        <Size>
+          <AbsDimension x="82" y="15" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="104" y="-190" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnClick>ObjectNumber:SetText("177164")</OnClick>
+        </Scripts>
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </NormalTexture>
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </PushedTexture>
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </DisabledTexture>
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </HighlightTexture>
+        <ButtonText name="$parentText">
+          <FontHeight>
+            <AbsValue val="10" />
+          </FontHeight>
+        </ButtonText>
+        <NormalFont style="GameFontNormal" />
+        <HighlightFont style="GameFontHighlight" />
+        <DisabledFont style="GameFontDisable" />
+        <PushedTextOffset x="0" y="0" />
+      </Button>
+      <Button name="$parentButton6" text="Circle of Calling">
+        <!--<FrameSkin skinid="f15d4970-d66d-444e-bb2d-1ad102c87fed" frameid="f15d4973-d66d-444e-bb2d-1ad102c87fed" />-->
+        <Size>
+          <AbsDimension x="82" y="17" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="104" y="-167" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnClick>ObjectNumber:SetText("178670")</OnClick>
+        </Scripts>
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </NormalTexture>
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </PushedTexture>
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </DisabledTexture>
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </HighlightTexture>
+        <ButtonText name="$parentText">
+          <FontHeight>
+            <AbsValue val="10" />
+          </FontHeight>
+        </ButtonText>
+        <NormalFont style="GameFontNormal" />
+        <HighlightFont style="GameFontHighlight" />
+        <DisabledFont style="GameFontDisable" />
+        <PushedTextOffset x="0" y="0" />
+      </Button>
+      <Button name="Block" text="Block">
+        <!--<FrameSkin skinid="f15d4970-d66d-444e-bb2d-1ad102c87fed" frameid="f15d4973-d66d-444e-bb2d-1ad102c87fed" />-->
+        <Size>
+          <AbsDimension x="82" y="17" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="104" y="-144" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnClick>ObjectNumber:SetText("400001")</OnClick>
+        </Scripts>
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </NormalTexture>
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </PushedTexture>
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </DisabledTexture>
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </HighlightTexture>
+        <ButtonText name="$parentText">
+          <FontHeight>
+            <AbsValue val="10" />
+          </FontHeight>
+        </ButtonText>
+        <NormalFont style="GameFontNormal" />
+        <HighlightFont style="GameFontHighlight" />
+        <DisabledFont style="GameFontDisable" />
+        <PushedTextOffset x="0" y="0" />
+      </Button>
+      <Button name="$parentButton4" text="Wooden Log">
+        <!--<FrameSkin skinid="f15d4970-d66d-444e-bb2d-1ad102c87fed" frameid="f15d4973-d66d-444e-bb2d-1ad102c87fed" />-->
+        <Size>
+          <AbsDimension x="81" y="17" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="17" y="-167" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnClick>ObjectNumber:SetText("400006")</OnClick>
+        </Scripts>
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </NormalTexture>
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </PushedTexture>
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </DisabledTexture>
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </HighlightTexture>
+        <ButtonText name="$parentText">
+          <FontHeight>
+            <AbsValue val="10" />
+          </FontHeight>
+        </ButtonText>
+        <NormalFont style="GameFontNormal" />
+        <HighlightFont style="GameFontHighlight" />
+        <DisabledFont style="GameFontDisable" />
+        <PushedTextOffset x="0" y="0" />
+      </Button>
+      <Button name="$parentButton3" text="Cage Base">
+        <!--<FrameSkin skinid="f15d4970-d66d-444e-bb2d-1ad102c87fed" frameid="f15d4973-d66d-444e-bb2d-1ad102c87fed" />-->
+        <Size>
+          <AbsDimension x="81" y="17" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="17" y="-144" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnClick>ObjectNumber:SetText("182943")</OnClick>
+        </Scripts>
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </NormalTexture>
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </PushedTexture>
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </DisabledTexture>
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </HighlightTexture>
+        <ButtonText name="$parentText">
+          <FontHeight>
+            <AbsValue val="10" />
+          </FontHeight>
+        </ButtonText>
+        <NormalFont style="GameFontNormal" />
+        <HighlightFont style="GameFontHighlight" />
+        <DisabledFont style="GameFontDisable" />
+        <PushedTextOffset x="0" y="0" />
+      </Button>
+      <Button name="$parentButton2" text="x">
+        <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508884-59c2-4f83-ae10-27aaad48391b" />-->
+        <Size>
+          <AbsDimension x="18" y="17" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="183" y="-6" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnClick>QuickPortalForm:Hide();
+</OnClick>
+        </Scripts>
+        <NormalTexture file="Interface\AddOns\EchelonedAssistant\art\UI-Panel-Button-Up">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </NormalTexture>
+        <PushedTexture file="Interface\AddOns\EchelonedAssistant\art\UI-Panel-Button-Down">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </PushedTexture>
+        <DisabledTexture file="Interface\AddOns\EchelonedAssistant\art\UI-Panel-Button-Disabled">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </DisabledTexture>
+        <HighlightTexture file="Interface\AddOns\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </HighlightTexture>
+        <ButtonText name="$parentText">
           <FontHeight>
             <AbsValue val="10" />
           </FontHeight>
@@ -107,39 +729,6 @@
         <HighlightFont style="GameFontHighlight" />
         <DisabledFont style="GameFontDisable" />
       </Button>
-      <Frame name="$parentLabel1">
-        <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508885-59c2-4f83-ae10-27aaad48391b" />-->
-        <Size>
-          <AbsDimension x="170" y="10" />
-        </Size>
-        <Anchors>
-          <Anchor point="TOPLEFT">
-            <Offset>
-              <AbsDimension x="16" y="-75" />
-            </Offset>
-          </Anchor>
-        </Anchors>
-        <Layers>
-          <Layer>
-            <FontString name="$parentLabel" font="Fonts\FRIZQT__.TTF" text="-------------------------">
-              <Anchors>
-                <Anchor point="TOPLEFT" />
-                <Anchor point="BOTTOMRIGHT" />
-              </Anchors>
-              <FontHeight>
-                <AbsValue val="12" />
-              </FontHeight>
-              <Color r="1" g="0.8196079" b="0" />
-              <Shadow>
-                <Color r="0" g="0" b="0" />
-                <Offset>
-                  <AbsDimension x="1" y="-1" />
-                </Offset>
-              </Shadow>
-            </FontString>
-          </Layer>
-        </Layers>
-      </Frame>
       <Button name="$parentButton1" text="Stormwind">
         <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508884-59c2-4f83-ae10-27aaad48391b" />-->
         <Size>
@@ -153,29 +742,21 @@
           </Anchor>
         </Anchors>
         <Scripts>
-          <OnClick>QPStormwind()
-</OnClick>
+          <OnClick>ObjectNumber:SetText("176296")</OnClick>
         </Scripts>
-        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
+        <NormalTexture file="Interface\AddOns\EchelonedAssistant\art\UI-Panel-Button-Up">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </NormalTexture>
-        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
+        <PushedTexture file="Interface\AddOns\EchelonedAssistant\art\UI-Panel-Button-Down">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </PushedTexture>
-        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
+        <DisabledTexture file="Interface\AddOns\EchelonedAssistant\art\UI-Panel-Button-Disabled">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </DisabledTexture>
-        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
+        <HighlightTexture file="Interface\AddOns\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </HighlightTexture>
         <ButtonText name="$parentText">
-          <Anchors>
-            <Anchor point="CENTER">
-              <Offset>
-                <AbsDimension x="0" y="1" />
-              </Offset>
-            </Anchor>
-          </Anchors>
           <FontHeight>
             <AbsValue val="10" />
           </FontHeight>
@@ -197,29 +778,21 @@
           </Anchor>
         </Anchors>
         <Scripts>
-          <OnClick>QPIronforge()
-</OnClick>
+          <OnClick>ObjectNumber:SetText("176497")</OnClick>
         </Scripts>
-        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
+        <NormalTexture file="Interface\AddOns\EchelonedAssistant\art\UI-Panel-Button-Up">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </NormalTexture>
-        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
+        <PushedTexture file="Interface\AddOns\EchelonedAssistant\art\UI-Panel-Button-Down">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </PushedTexture>
-        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
+        <DisabledTexture file="Interface\AddOns\EchelonedAssistant\art\UI-Panel-Button-Disabled">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </DisabledTexture>
-        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
+        <HighlightTexture file="Interface\AddOns\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </HighlightTexture>
         <ButtonText name="$parentText">
-          <Anchors>
-            <Anchor point="CENTER">
-              <Offset>
-                <AbsDimension x="0" y="1" />
-              </Offset>
-            </Anchor>
-          </Anchors>
           <FontHeight>
             <AbsValue val="10" />
           </FontHeight>
@@ -241,29 +814,21 @@
           </Anchor>
         </Anchors>
         <Scripts>
-          <OnClick>QPDarnassus()
-</OnClick>
+          <OnClick>ObjectNumber:SetText("176498")</OnClick>
         </Scripts>
-        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
+        <NormalTexture file="Interface\AddOns\EchelonedAssistant\art\UI-Panel-Button-Up">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </NormalTexture>
-        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
+        <PushedTexture file="Interface\AddOns\EchelonedAssistant\art\UI-Panel-Button-Down">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </PushedTexture>
-        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
+        <DisabledTexture file="Interface\AddOns\EchelonedAssistant\art\UI-Panel-Button-Disabled">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </DisabledTexture>
-        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
+        <HighlightTexture file="Interface\AddOns\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </HighlightTexture>
         <ButtonText name="$parentText">
-          <Anchors>
-            <Anchor point="CENTER">
-              <Offset>
-                <AbsDimension x="0" y="1" />
-              </Offset>
-            </Anchor>
-          </Anchors>
           <FontHeight>
             <AbsValue val="10" />
           </FontHeight>
@@ -285,29 +850,21 @@
           </Anchor>
         </Anchors>
         <Scripts>
-          <OnClick>QPExodar()
-</OnClick>
+          <OnClick>ObjectNumber:SetText("182351")</OnClick>
         </Scripts>
-        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
+        <NormalTexture file="Interface\AddOns\EchelonedAssistant\art\UI-Panel-Button-Up">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </NormalTexture>
-        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
+        <PushedTexture file="Interface\AddOns\EchelonedAssistant\art\UI-Panel-Button-Down">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </PushedTexture>
-        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
+        <DisabledTexture file="Interface\AddOns\EchelonedAssistant\art\UI-Panel-Button-Disabled">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </DisabledTexture>
-        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
+        <HighlightTexture file="Interface\AddOns\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </HighlightTexture>
         <ButtonText name="$parentText">
-          <Anchors>
-            <Anchor point="CENTER">
-              <Offset>
-                <AbsDimension x="0" y="1" />
-              </Offset>
-            </Anchor>
-          </Anchors>
           <FontHeight>
             <AbsValue val="10" />
           </FontHeight>
@@ -324,34 +881,26 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="16" y="-91" />
+              <AbsDimension x="16" y="-75" />
             </Offset>
           </Anchor>
         </Anchors>
         <Scripts>
-          <OnClick>QPOrgrimmar()
-</OnClick>
+          <OnClick>ObjectNumber:SetText("176499")</OnClick>
         </Scripts>
-        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
+        <NormalTexture file="Interface\AddOns\EchelonedAssistant\art\UI-Panel-Button-Up">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </NormalTexture>
-        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
+        <PushedTexture file="Interface\AddOns\EchelonedAssistant\art\UI-Panel-Button-Down">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </PushedTexture>
-        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
+        <DisabledTexture file="Interface\AddOns\EchelonedAssistant\art\UI-Panel-Button-Disabled">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </DisabledTexture>
-        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
+        <HighlightTexture file="Interface\AddOns\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </HighlightTexture>
         <ButtonText name="$parentText">
-          <Anchors>
-            <Anchor point="CENTER">
-              <Offset>
-                <AbsDimension x="0" y="1" />
-              </Offset>
-            </Anchor>
-          </Anchors>
           <FontHeight>
             <AbsValue val="10" />
           </FontHeight>
@@ -368,34 +917,26 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="104" y="-91" />
+              <AbsDimension x="104" y="-75" />
             </Offset>
           </Anchor>
         </Anchors>
         <Scripts>
-          <OnClick>QPUndercity()
-</OnClick>
+          <OnClick>ObjectNumber:SetText("176501")</OnClick>
         </Scripts>
-        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
+        <NormalTexture file="Interface\AddOns\EchelonedAssistant\art\UI-Panel-Button-Up">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </NormalTexture>
-        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
+        <PushedTexture file="Interface\AddOns\EchelonedAssistant\art\UI-Panel-Button-Down">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </PushedTexture>
-        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
+        <DisabledTexture file="Interface\AddOns\EchelonedAssistant\art\UI-Panel-Button-Disabled">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </DisabledTexture>
-        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
+        <HighlightTexture file="Interface\AddOns\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </HighlightTexture>
         <ButtonText name="$parentText">
-          <Anchors>
-            <Anchor point="CENTER">
-              <Offset>
-                <AbsDimension x="0" y="1" />
-              </Offset>
-            </Anchor>
-          </Anchors>
           <FontHeight>
             <AbsValue val="10" />
           </FontHeight>
@@ -412,34 +953,26 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="16" y="-114" />
+              <AbsDimension x="16" y="-98" />
             </Offset>
           </Anchor>
         </Anchors>
         <Scripts>
-          <OnClick>QPThunderbluff()
-</OnClick>
+          <OnClick>ObjectNumber:SetText("176500")</OnClick>
         </Scripts>
-        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
+        <NormalTexture file="Interface\AddOns\EchelonedAssistant\art\UI-Panel-Button-Up">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </NormalTexture>
-        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
+        <PushedTexture file="Interface\AddOns\EchelonedAssistant\art\UI-Panel-Button-Down">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </PushedTexture>
-        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
+        <DisabledTexture file="Interface\AddOns\EchelonedAssistant\art\UI-Panel-Button-Disabled">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </DisabledTexture>
-        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
+        <HighlightTexture file="Interface\AddOns\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </HighlightTexture>
         <ButtonText name="$parentText">
-          <Anchors>
-            <Anchor point="CENTER">
-              <Offset>
-                <AbsDimension x="0" y="1" />
-              </Offset>
-            </Anchor>
-          </Anchors>
           <FontHeight>
             <AbsValue val="10" />
           </FontHeight>
@@ -456,34 +989,26 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="104" y="-114" />
+              <AbsDimension x="104" y="-98" />
             </Offset>
           </Anchor>
         </Anchors>
         <Scripts>
-          <OnClick>QPSilvermoon()
-</OnClick>
+          <OnClick>ObjectNumber:SetText("182352")</OnClick>
         </Scripts>
-        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
+        <NormalTexture file="Interface\AddOns\EchelonedAssistant\art\UI-Panel-Button-Up">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </NormalTexture>
-        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
+        <PushedTexture file="Interface\AddOns\EchelonedAssistant\art\UI-Panel-Button-Down">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </PushedTexture>
-        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
+        <DisabledTexture file="Interface\AddOns\EchelonedAssistant\art\UI-Panel-Button-Disabled">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </DisabledTexture>
-        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
+        <HighlightTexture file="Interface\AddOns\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </HighlightTexture>
         <ButtonText name="$parentText">
-          <Anchors>
-            <Anchor point="CENTER">
-              <Offset>
-                <AbsDimension x="0" y="1" />
-              </Offset>
-            </Anchor>
-          </Anchors>
           <FontHeight>
             <AbsValue val="10" />
           </FontHeight>
@@ -492,39 +1017,6 @@
         <HighlightFont style="GameFontHighlight" />
         <DisabledFont style="GameFontDisable" />
       </Button>
-      <Frame name="$parentComponent9">
-        <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508885-59c2-4f83-ae10-27aaad48391b" />-->
-        <Size>
-          <AbsDimension x="170" y="10" />
-        </Size>
-        <Anchors>
-          <Anchor point="TOPLEFT">
-            <Offset>
-              <AbsDimension x="16" y="-134" />
-            </Offset>
-          </Anchor>
-        </Anchors>
-        <Layers>
-          <Layer>
-            <FontString name="$parentLabel" font="Fonts\FRIZQT__.TTF" text="-------------------------">
-              <Anchors>
-                <Anchor point="TOPLEFT" />
-                <Anchor point="BOTTOMRIGHT" />
-              </Anchors>
-              <FontHeight>
-                <AbsValue val="12" />
-              </FontHeight>
-              <Color r="1" g="0.8196079" b="0" />
-              <Shadow>
-                <Color r="0" g="0" b="0" />
-                <Offset>
-                  <AbsDimension x="1" y="-1" />
-                </Offset>
-              </Shadow>
-            </FontString>
-          </Layer>
-        </Layers>
-      </Frame>
       <Button name="$parentComponent8" text="Shattrath">
         <!--<FrameSkin skinid="dcb143e1-a4ab-4e7c-b934-1efa40101d21" frameid="2d508884-59c2-4f83-ae10-27aaad48391b" />-->
         <Size>
@@ -533,34 +1025,26 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="16" y="-150" />
+              <AbsDimension x="16" y="-121" />
             </Offset>
           </Anchor>
         </Anchors>
         <Scripts>
-          <OnClick>QPShattrath();
-</OnClick>
+          <OnClick>ObjectNumber:SetText("183384")</OnClick>
         </Scripts>
-        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
+        <NormalTexture file="Interface\AddOns\EchelonedAssistant\art\UI-Panel-Button-Up">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </NormalTexture>
-        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
+        <PushedTexture file="Interface\AddOns\EchelonedAssistant\art\UI-Panel-Button-Down">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </PushedTexture>
-        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
+        <DisabledTexture file="Interface\AddOns\EchelonedAssistant\art\UI-Panel-Button-Disabled">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </DisabledTexture>
-        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
+        <HighlightTexture file="Interface\AddOns\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </HighlightTexture>
         <ButtonText name="$parentText">
-          <Anchors>
-            <Anchor point="CENTER">
-              <Offset>
-                <AbsDimension x="0" y="1" />
-              </Offset>
-            </Anchor>
-          </Anchors>
           <FontHeight>
             <AbsValue val="10" />
           </FontHeight>
@@ -577,34 +1061,26 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="104" y="-150" />
+              <AbsDimension x="104" y="-121" />
             </Offset>
           </Anchor>
         </Anchors>
-		<Scripts>
-          <OnClick>QPDalaran();
-		</OnClick>
+        <Scripts>
+          <OnClick>ObjectNumber:SetText("191164")</OnClick>
         </Scripts>
-        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
+        <NormalTexture file="Interface\AddOns\EchelonedAssistant\art\UI-Panel-Button-Up">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </NormalTexture>
-        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
+        <PushedTexture file="Interface\AddOns\EchelonedAssistant\art\UI-Panel-Button-Down">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </PushedTexture>
-        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
+        <DisabledTexture file="Interface\AddOns\EchelonedAssistant\art\UI-Panel-Button-Disabled">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </DisabledTexture>
-        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
+        <HighlightTexture file="Interface\AddOns\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </HighlightTexture>
         <ButtonText name="$parentText">
-          <Anchors>
-            <Anchor point="CENTER">
-              <Offset>
-                <AbsDimension x="0" y="1" />
-              </Offset>
-            </Anchor>
-          </Anchors>
           <FontHeight>
             <AbsValue val="10" />
           </FontHeight>
@@ -615,7 +1091,7 @@
       </Button>
     </Frames>
     <Scripts>
-      <OnLoad>GMHelperOnLoad(self)
+      <OnLoad>self:RegisterForDrag("RightButton");
 </OnLoad>
       <OnDragStart>self:StartMoving(self)
 </OnDragStart>

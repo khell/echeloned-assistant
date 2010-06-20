@@ -12,7 +12,7 @@
         </Offset>
       </Anchor>
     </Anchors>
-    <Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+    <Backdrop bgFile="Interface\Addons\EchelonedAssistant\art\backdrop.tga" tile="false">
       <BackgroundInsets>
         <AbsInset left="11" right="12" top="12" bottom="11" />
       </BackgroundInsets>
@@ -25,9 +25,9 @@
     </Backdrop>
     <Layers>
       <Layer>
-        <Texture name="$parentTitleBorder" file="Interface\DialogFrame\UI-DialogBox-Header">
+        <Texture name="$parentTitleBorder" file="ENVIRONMENTS\STARS\AUCHINDOUN_VORTEXCLOUD01.blp">
           <Size>
-            <AbsDimension x="160" y="32" />
+            <AbsDimension x="125" y="32" />
           </Size>
           <Anchors>
             <Anchor point="TOP">
@@ -146,16 +146,16 @@
           <OnClick>WepskForm:Hide(); SkillForm:Show();
 </OnClick>
         </Scripts>
-        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </NormalTexture>
-        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </PushedTexture>
-        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </DisabledTexture>
-        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </HighlightTexture>
         <ButtonText name="$parentText">
@@ -298,7 +298,7 @@
                 <Anchor point="RIGHT" />
               </Anchors>
             </DisabledTexture>
-            <HighlightTexture name="$parentHighlightTexture" file="Interface\Buttons\UI-Common-MouseHilight" alphaMode="ADD">
+            <HighlightTexture name="$parentHighlightTexture" file="Interface\Addons\EchelonedAssistant\art\UI-Common-MouseHilight" alphaMode="ADD">
               <Size>
                 <AbsDimension x="24" y="24" />
               </Size>
@@ -404,16 +404,16 @@ UIDropDownMenu_Initialize(this, cb_init_fn)
           <OnClick>LearnWepsk(); WeaponSkillLvl:ClearFocus()
 </OnClick>
         </Scripts>
-        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
+        <NormalTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Up">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </NormalTexture>
-        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
+        <PushedTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Down">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </PushedTexture>
-        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
+        <DisabledTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Disabled">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </DisabledTexture>
-        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
+        <HighlightTexture file="Interface\Addons\EchelonedAssistant\art\UI-Panel-Button-Highlight" alphaMode="ADD">
           <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
         </HighlightTexture>
         <ButtonText name="$parentText">
@@ -427,7 +427,7 @@ UIDropDownMenu_Initialize(this, cb_init_fn)
       </Button>
     </Frames>
     <Scripts>
-      <OnLoad>GMHelperOnLoad(self)
+      <OnLoad>self:RegisterForDrag("RightButton");
 </OnLoad>
       <OnDragStart>self:StartMoving()
 </OnDragStart>
